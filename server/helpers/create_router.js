@@ -30,9 +30,9 @@ const createRouter = function (collection) {
   });
 
   router.post('/', (req, res) => {
-    const newWish = req.body;
+    const newBeer = req.body;
     collection
-      .insertOne(newWish)
+      .insertOne(newBeer)
       .then(() => collection.find().toArray())
       .then((docs) => res.json(docs))
   });
