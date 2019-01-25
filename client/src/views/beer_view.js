@@ -8,7 +8,7 @@ BeerView.prototype.render = function(beer) {
   const drankBeerContainer = document.createElement('section');
   drankBeerContainer.id = 'beer';
 
-  const beerName = this.createName(beer.name);
+  const beerName = this.createName(`Beer: ${beer.name}`);
   drankBeerContainer.appendChild(beerName);
 
   const beerBrewery = this.createDetailList(beer.brewery);
@@ -22,6 +22,12 @@ BeerView.prototype.render = function(beer) {
 
   const beerDescription = this.createDetailList(beer.description);
   drankBeerContainer.appendChild(beerDescription);
+
+  const beerCountry = this.createDetailList(beer.country);
+  drankBeerContainer.appendChild(beerCountry);
+
+  const beerRating = this.createDetailList(beer.rating);
+  drankBeerContainer.appendChild(beerRating);
 
   this.container.appendChild(drankBeerContainer)
 
