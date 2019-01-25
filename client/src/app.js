@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const url = "http://localhost:3000/api/beers";
   const beers = new Beers(url);
+  beers.bindEvents();
   beers.getData();
 
 });

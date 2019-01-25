@@ -7,6 +7,7 @@ const BeerFormView = function(container) {
 BeerFormView.prototype.bindEvents = function () {
   this.container.addEventListener('submit', (evt) => {
     this.handleSubmit(evt);
+
   });
 };
 
@@ -23,9 +24,9 @@ BeerFormView.prototype.createBeer = function (container) {
     brewery: container.brewery.value,
     country: container.country.value,
     abv: container.abv.value,
-    type: container.type.value,
+    // type: container.type.value,
     description: container.description.value,
-    rating: container.rating.value,
+    // rating: container.rating.value
   }
   return newBeerInput;
 };
