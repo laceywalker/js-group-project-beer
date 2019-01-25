@@ -11,30 +11,30 @@ BeerView.prototype.render = function(beer) {
   const beerName = this.createName(`Beer: ${beer.name}`);
   drankBeerContainer.appendChild(beerName);
 
-  const beerBrewery = this.createDetailList(beer.brewery);
+  const beerRating = this.createDetailList(`Rating: ${beer.rating}`);
+  drankBeerContainer.appendChild(beerRating);
+
+  const beerBrewery = this.createDetailList(`Brewery: ${beer.brewery}`);
   drankBeerContainer.appendChild(beerBrewery);
 
-  const beerAbv = this.createDetailList(beer.abv);
+  const beerAbv = this.createDetailList(`ABV: ${beer.abv}%`);
   drankBeerContainer.appendChild(beerAbv);
 
-  const beerType = this.createDetailList(beer.type);
+  const beerType = this.createDetailList(`Type: ${beer.type}`);
   drankBeerContainer.appendChild(beerType);
 
-  const beerDescription = this.createDetailList(beer.description);
-  drankBeerContainer.appendChild(beerDescription);
-
-  const beerCountry = this.createDetailList(beer.country);
+  const beerCountry = this.createDetailList(`Country: ${beer.country}`);
   drankBeerContainer.appendChild(beerCountry);
 
-  const beerRating = this.createDetailList(beer.rating);
-  drankBeerContainer.appendChild(beerRating);
+  const beerDescription = this.createDetailList(`Description: ${beer.description}`);
+  drankBeerContainer.appendChild(beerDescription);
 
   this.container.appendChild(drankBeerContainer)
 
 };
 
 BeerView.prototype.createName = function (text) {
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.textContent = text;
   return name;
 };
