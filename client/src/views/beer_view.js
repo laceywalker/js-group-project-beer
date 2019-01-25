@@ -4,22 +4,40 @@ const BeerView = function(container) {
 
 
 BeerView.prototype.render = function(beer) {
-  const drankBeerContainer = document.querySelector("drank-beer-list");
 
+  const drankBeerContainer = document.createElement('section');
+  drankBeerContainer.id = 'beer';
 
-  const newBeer = this.createDetail(beer);
-  drankBeerContainer.appendChild(newBeer);
+  const beerName = this.createName(beer.name);
+  drankBeerContainer.appendChild(beerName);
+
+  const beerBrewery = this.createDetailList(beer.brewery);
+  drankBeerContainer.appendChild(beerBrewery);
+
+  const beerAbv = this.createDetailList(beer.abv);
+  drankBeerContainer.appendChild(beerAbv);
+
+  const beerType = this.createDetailList(beer.type);
+  drankBeerContainer.appendChild(beerType);
+
+  const beerDescription = this.createDetailList(beer.description);
+  drankBeerContainer.appendChild(beerDescription);
 
   this.container.appendChild(drankBeerContainer)
 
 };
 
-BeerView.prototype.createDetail = function (text) {
-  const detail = document.createElement('div');
+BeerView.prototype.createName = function (text) {
+  const name = document.createElement('h1');
+  name.textContent = text;
+  return name;
+};
+
+BeerView.prototype.createDetailList = function (text) {
+  const detail = document.createElement('li');
   detail.textContent = text;
   return detail;
 };
-
 
 
 module.exports = BeerView;
