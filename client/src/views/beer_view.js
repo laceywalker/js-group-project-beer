@@ -1,3 +1,5 @@
+const PubSub = require('../helpers/pub_sub.js');
+
 const BeerView = function(container) {
   this.container = container;
 };
@@ -29,6 +31,9 @@ BeerView.prototype.render = function(beer) {
   const beerDescription = this.createDetailList(`Description: ${beer.description}`);
   drankBeerContainer.appendChild(beerDescription);
 
+  const deleteButton = this.createDeleteButton(beer._id);
+  drankBeerContainer.appendChild(deleteButton);
+
   this.container.appendChild(drankBeerContainer)
 
 };
@@ -43,6 +48,18 @@ BeerView.prototype.createDetailList = function (text) {
   const detail = document.createElement('li');
   detail.textContent = text;
   return detail;
+};
+
+BeerView.prototype.createDeleteButton = function (beerId) {
+  const button = document.createElement('button');
+  button.classList.add('delete-btn');
+  button.value = beerId;
+
+  button.addEventListener('click', (evt) => {
+    PubSub.publish('BeerListView:beer-delete-clicked', evt.target.value);
+  });
+
+  return button;
 };
 
 
