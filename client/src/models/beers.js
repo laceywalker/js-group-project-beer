@@ -6,6 +6,14 @@ const Beers = function(url) {
   this.request = new RequestHelper(this.url);
 };
 
+
+Beers.prototype.bindEvents = function () {
+
+  PubSub.subscribe('BeerFormView:New Beer Submit', (evt) => {
+    this.postBeer(evt.detail);
+  })
+};
+
 Beers.prototype.getData = function () {
   this.request.get()
   .then((beers) => {
@@ -13,6 +21,14 @@ Beers.prototype.getData = function () {
     console.log(beers)
   })
   .catch(console.error);
+};
+
+Beers.prototype.postBeer = function (beerID) {
+  this.request.post(beerID)
+    .then((beers) => {
+      PubSub.publish('BeerListView:data-loaded', beers);
+    })
+    .catch(console.error);
 };
 
 

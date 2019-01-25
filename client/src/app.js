@@ -1,7 +1,12 @@
 const Beers = require('./models/beers.js');
-const BeerListView = require('./views/beer_list_view');
+const BeerListView = require('./views/beer_list_view.js');
+const BeerFormView = require('./views/beer_form_view.js');
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  const beerForm = document.querySelector('#form');
+  const beerFormView = new BeerFormView(beerForm);
+  beerFormView.bindEvents();
 
   const beerContainer = document.querySelector('#drank-beer-list');
   console.log(beerContainer);
