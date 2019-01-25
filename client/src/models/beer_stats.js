@@ -51,7 +51,7 @@ BeerStats.prototype.favouriteCountry = function(){
 
 BeerStats.prototype.averageRating = function(){
   // This function takes in a list of beers objects and returns the average rating of each
-  const ratingsArray = this.beerArray.map( beer => beer.rating )
+  const ratingsArray = this.beerArray.map( beer => Number(beer.rating) )
   const ratingsAvg = (
     ratingsArray.reduce((acc, rating) => acc + rating) 
     / ratingsArray.length
@@ -62,7 +62,7 @@ BeerStats.prototype.averageRating = function(){
 
 BeerStats.prototype.averageABV = function(){
   // This function takes in a list of beer objects and returns the average ABV
-  const abvArray = this.beerArray.map( beer => beer.abv );
+  const abvArray = this.beerArray.map( beer => Number(beer.abv) );
   const abvAvg = (
     abvArray.reduce((acc, abv) => acc + abv) 
     / abvArray.length
