@@ -18,12 +18,11 @@ BeerStats.prototype.calculateStats = function(){
 // Various function calls to calculate the individual stats go here
 const numBeersDrank = this.beerArray.length;
 
-//this.favouriteBeer();
-//this.worstBeer();
-//this.favouriteCountry();
-//this.averageRating();
-//this.averageABV();
-//this.averageABVmessage();
+this.favouriteBeer();
+this.worstBeer();
+this.favouriteCountry();
+this.averageRating();
+this.averageABV();
 
 // Package the various stats into an object for publication
   
@@ -33,6 +32,24 @@ console.table(this.beerArray);
 console.table(this.beerStats);
 }
 
+BeerStats.prototype.favouriteBeer = function(){
+  return null;
+}
 
+BeerStats.prototype.worstBeer = function(){
+  return null;
+}
+
+BeerStats.prototype.favouriteCountry = function(){
+  return null;
+}
+
+BeerStats.prototype.averageRating = function(){
+  return null;
+}
+
+BeerStats.prototype.averageABV = function(){
+  return null;
+}
 
 module.exports = BeerStats;
