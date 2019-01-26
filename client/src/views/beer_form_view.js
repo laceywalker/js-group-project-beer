@@ -7,7 +7,6 @@ const BeerFormView = function(container) {
 BeerFormView.prototype.bindEvents = function () {
   this.container.addEventListener('submit', (evt) => {
     this.handleSubmit(evt);
-
   });
 };
 

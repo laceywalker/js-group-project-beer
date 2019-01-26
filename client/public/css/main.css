@@ -35,3 +35,9 @@ section {
  border: 2px solid black;
  display: block;
 }
+
+
+#edit-div {
+  background: pink;
+  width: 500px;
+}

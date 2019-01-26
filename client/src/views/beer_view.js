@@ -34,6 +34,9 @@ BeerView.prototype.render = function(beer) {
   const deleteButton = this.createDeleteButton(beer._id);
   drankBeerContainer.appendChild(deleteButton);
 
+  const updateButton = this.createUpdateButton(beer);
+  drankBeerContainer.appendChild(updateButton);
+
   this.container.appendChild(drankBeerContainer)
 
 };
@@ -62,5 +65,16 @@ BeerView.prototype.createDeleteButton = function (beerId) {
   return button;
 };
 
+BeerView.prototype.createUpdateButton = function (beer) {
+  const button = document.createElement('button');
+  button.classList.add('update-btn');
+  button.value = beer;
+  button.addEventListener('click', (evt) => {
+    PubSub.publish('BeerView:edit-view-open', evt.target.value);
+
+  });
+
+  return button;
+};
 
 module.exports = BeerView;

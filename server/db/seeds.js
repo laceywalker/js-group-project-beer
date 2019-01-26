@@ -10,7 +10,8 @@ db.beers.insertMany([
     abv: 4,
     type: "lager",
     description: "Great tidelines, foamy head, impeccable session lager",
-    rating: 5
+    rating: 5,
+    date: "01/01/19"
   },
   {
     name: "Joker IPA",
@@ -19,7 +20,8 @@ db.beers.insertMany([
     abv: 5,
     type: "IPA",
     description: "Intense, wickedly hoppy",
-    rating: 5
+    rating: 5,
+    date: "15/01/19"
   },
   {
     name: "Miller Highlife",
@@ -28,7 +30,8 @@ db.beers.insertMany([
     abv: 4.6,
     type: "lager",
     description: "The champagne of beers",
-    rating: 2
+    rating: 2,
+    date: "17/01/19"
   },
   {
     name: "Peroni",
@@ -37,6 +40,7 @@ db.beers.insertMany([
     abv: 5.1,
     type: "lager",
     description: "I get this beer from Tesco",
-    rating: 5
+    rating: 5,
+    date: "05/01/19"
   }
 ]);
