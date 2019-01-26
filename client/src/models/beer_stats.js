@@ -10,6 +10,7 @@ BeerStats.prototype.bindEvents = function(){
     this.beerArray = event.detail;
     this.calculateStats();
     console.table(this.beerStats);
+    PubSub.publish('BeerStats:BeerStatsCalculated', this.beerStats);
   })
 }
 
@@ -30,8 +31,8 @@ BeerStats.prototype.calculateStats = function(){
   this.beerStats = 
     {
       'numBeersDrank': numBeersDrank,
-      'worstBeer': worstBeer,
-      'favouriteCountry': favouriteCountry,
+//      'worstBeer': worstBeer,
+//      'favouriteCountry': favouriteCountry,
       'averageRating': averageRating,
       'averageABV': averageABV
     }; 
@@ -41,9 +42,16 @@ BeerStats.prototype.favouriteBeer = function(){
   return null;
 }
 
-BeerStats.prototype.worstBeer = function(){
-  return 'Tennents';
-}
+//BeerStats.prototype.worstBeer = function(){
+//  let  worstBeerRating = 6;
+//  let  worstBeerIndex = null;
+//  this.beerArray.forEach((beer, index) => {
+//    if (Number(beer.rating) < worstBeerRating){
+//      worstBeerRating = Number(beer.rating);
+//      worstBeerIndex = index;
+//    } 
+//  }); 
+//}
 
 BeerStats.prototype.favouriteCountry = function(){
   return null;
