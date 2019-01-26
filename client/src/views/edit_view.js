@@ -11,11 +11,10 @@ const EditView = function(divContainer, editForm) {
 EditView.prototype.bindEvents = function () {
   PubSub.subscribe('BeerView:edit-view-open', (evt) => {
     this.container.style.visibility = "visible"
-    console.log(this.container)
-    // this.render(evt.detail);
+    this.render(evt.detail);
   });
 
-  // PubSub.publish('BeerListView:beer-update-clicked', evt.target.value);
+  PubSub.publish('BeerListView:beer-update-clicked', evt.target.value);
 };
 
 
