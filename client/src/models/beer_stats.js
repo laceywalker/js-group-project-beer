@@ -3,16 +3,15 @@ const PubSub = require('../helpers/pub_sub.js');
 const BeerStats = function(){
   this.beerArray = null;
   this.beerStats = null;
-}
+};
 
 BeerStats.prototype.bindEvents = function(){
   PubSub.subscribe('Beers:data-loaded', event => {
     this.beerArray = event.detail;
     this.calculateStats();
-    console.table(this.beerStats);
     PubSub.publish('BeerStats:BeerStatsCalculated', this.beerStats);
-  })
-}
+  });
+};
 
 BeerStats.prototype.calculateStats = function(){
 
@@ -31,16 +30,16 @@ BeerStats.prototype.calculateStats = function(){
   this.beerStats = 
     {
       'numBeersDrank': numBeersDrank,
-//      'worstBeer': worstBeer,
-//      'favouriteCountry': favouriteCountry,
+      //'worstBeer': worstBeer,
+      //'favouriteCountry': favouriteCountry,
       'averageRating': averageRating,
       'averageABV': averageABV
     }; 
-}
+};
 
 BeerStats.prototype.favouriteBeer = function(){
   return null;
-}
+};
 
 //BeerStats.prototype.worstBeer = function(){
 //  let  worstBeerRating = 6;
@@ -55,18 +54,18 @@ BeerStats.prototype.favouriteBeer = function(){
 
 BeerStats.prototype.favouriteCountry = function(){
   return null;
-}
+};
 
 BeerStats.prototype.averageRating = function(){
   // This function takes in a list of beers objects and returns the average rating of each
-  const ratingsArray = this.beerArray.map( beer => Number(beer.rating) )
+  const ratingsArray = this.beerArray.map( beer => Number(beer.rating) );
   const ratingsAvg = (
     ratingsArray.reduce((acc, rating) => acc + rating) 
     / ratingsArray.length
   ).toFixed(2);
   return ratingsAvg;
 
-}
+};
 
 BeerStats.prototype.averageABV = function(){
   // This function takes in a list of beer objects and returns the average ABV
@@ -76,6 +75,6 @@ BeerStats.prototype.averageABV = function(){
     / abvArray.length
   ).toFixed(2);
   return abvAvg;
-}
+};
 
 module.exports = BeerStats;
