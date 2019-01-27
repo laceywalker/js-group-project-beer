@@ -20,7 +20,7 @@ BeerStats.prototype.calculateStats = function(){
   const numBeersDrank = this.beerArray.length;
 
   const favouriteBeer = this.favouriteBeer();
-  const worstBeer = this.worstBeer();
+  //const worstBeer = this.worstBeer();
   const favouriteCountry = this.favouriteCountry();
   const averageRating = this.averageRating();
   const averageABV = this.averageABV();
