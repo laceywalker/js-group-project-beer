@@ -37,19 +37,17 @@ section {
  display: block;
 } */
 
-
-
 body{
   font-family: 'Major Mono Display', monospace;
   text-align: center;
   padding: 20px;
-background-color: #FFDAB9;
+  background-color: #FFDAB9;
 }
- h1 {
+
+h1{
   padding: inherit;
   border: 2px solid black;
   background-color: red;
-
 }
 
 h3{
@@ -57,20 +55,17 @@ h3{
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   background-color: #ff9900;
-
 }
 
-
-
-h2 {
+h2{
   text-align: left;
 }
 
-section {
+section{
   list-style-type: none;
 }
 
-#drank-beer-list {
+#drank-beer-list{
  text-align: left;
  width: 250px;
  border: 2px solid black;
@@ -80,7 +75,7 @@ section {
 
 /* navigation bar */
 
-.navbar ul {
+.navbar ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -89,7 +84,7 @@ section {
   background-color:#ff9900;
 }
 
-.navbar li {
+.navbar li{
   float: left;
 }
 
@@ -113,47 +108,50 @@ section {
   background-image: url('https://i.gifer.com/wmp.gif');
   height: 60px;
   color: #000066;
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 #form {
   background-color: #ff9900;
   width: 250px;
   text-align: left;
   padding: 20px;
-
+}
+   
+#save {
+  border: 1px solid blue;
+  border-radius: 15px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 15px;
+  background-color: #ff9900;
 }
 
-   
-    #save {
-    border: 1px solid blue;
-    border-radius: 15px;
-    padding: 10px;
-    width: 150px;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 20px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 15px;
-    background-color: #ff9900;
-  }
-  #save:hover{
-    background-color: #cc6600;
-  }
+#save:hover{
+  background-color: #cc6600;
+}
+
 input {
   position: relative;
   margin: 5px 5px 5px 0px;
 }
+
 button {
   width:100px;
   background-color: #ff9900;
   height: 25px;
-border-radius: 15px;
+  border-radius: 15px;
 }
 
 button:hover{
   background-color: red;
 }
+
 .fa {
   padding: 10px;
   font-size: 20px;
@@ -172,11 +170,26 @@ button:hover{
   background: #3B5998;
   color: white;
 }
+
 .fa-twitter {
   background: #55ACEE;
   color: white;
 }
+
 .fa-instagram {
   background: #125688;
   color: white;
 }
+
+/*
+ *  CSS for Stats View
+ */
+
+#stats{
+  text-align: left;
+  border: 2px solid black;
+}
+
+/*
+ *  End of Stats View CSS 
+ */
