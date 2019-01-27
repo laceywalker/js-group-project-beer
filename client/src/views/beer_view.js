@@ -56,6 +56,7 @@ BeerView.prototype.createDetailList = function (text) {
 BeerView.prototype.createDeleteButton = function (beerId) {
   const button = document.createElement('button');
   button.classList.add('delete-btn');
+  button.textContent = 'Delete';
   button.value = beerId;
 
   button.addEventListener('click', (evt) => {
