@@ -193,3 +193,8 @@ button:hover{
 /*
  *  End of Stats View CSS 
  */
+
+
+.beerPic img{
+width: 40px;
+}

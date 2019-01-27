@@ -13,7 +13,10 @@ BeerView.prototype.render = function(beer) {
   const beerName = this.createName(`Beer: ${beer.name}`);
   drankBeerContainer.appendChild(beerName);
 
-  const beerRating = this.createDetailList(`Rating: ${beer.rating}`);
+  const beerRatingDesc = this.createDetailList('Rating: ');
+  drankBeerContainer.appendChild(beerRatingDesc);
+
+  const beerRating = this.createBeerRating(beer.rating);
   drankBeerContainer.appendChild(beerRating);
 
   const beerBrewery = this.createDetailList(`Brewery: ${beer.brewery}`);
@@ -60,6 +63,20 @@ BeerView.prototype.createDeleteButton = function (beerId) {
   });
 
   return button;
+};
+
+BeerView.prototype.createBeerRating = function(rating){
+  const ratingLI = document.createElement('li');
+  ratingLI.className = 'beerPic';
+
+  for (let i = 0; i < rating; i++) {
+    const littleBeer = document.createElement('img');
+    littleBeer.src = '/assets/beer-mug.png';
+    ratingLI.appendChild(littleBeer);
+  } 
+
+  return ratingLI;
+
 };
 
 
