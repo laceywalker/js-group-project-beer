@@ -7,7 +7,7 @@ const BeerListView = function(container) {
 
 BeerListView.prototype.bindEvents = function () {
   PubSub.subscribe('Beers:data-loaded', (evt)=> {
-    console.log(evt)
+    // console.log(evt)
     this.render(evt.detail);
   })
 };

@@ -20,7 +20,7 @@ Beers.prototype.getData = function () {
   this.request.get()
   .then((beers) => {
     PubSub.publish('Beers:data-loaded', beers);
-    console.log(beers)
+    // console.log(beers)
   })
   .catch(console.error);
 };

@@ -26,11 +26,11 @@ const numBeersDrank = this.beerArray.length;
 //this.averageABVmessage();
 
 // Package the various stats into an object for publication
-  
-this.beerStats = {'numBeersDrank': numBeersDrank}; 
 
-console.table(this.beerArray);
-console.table(this.beerStats);
+this.beerStats = {'numBeersDrank': numBeersDrank};
+// 
+// console.table(this.beerArray);
+// console.table(this.beerStats);
 }
 
 

@@ -4,6 +4,7 @@ const BeerListView = require('./views/beer_list_view.js');
 const BeerFormView = require('./views/beer_form_view.js');
 const BeerStats = require('./models/beer_stats.js');
 const RandomBeerGenerator = require('./models/random_beer_generator.js')
+const RandomBeerView = require('./views/random_beer_view.js')
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -15,11 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
   beerStats.bindEvents();
 
 
-
   const beerContainer = document.querySelector('#drank-beer-list');
-  console.log(beerContainer);
+  // console.log(beerContainer);
   const beerListView = new BeerListView(beerContainer);
   beerListView.bindEvents();
+
+  const randomBeerContainer = document.querySelector('#random-beer');
+  const randomBeerView = new RandomBeerView(randomBeerContainer)
+  randomBeerView.bindEvents();
 
   const getRandomBeer = new RandomBeerGenerator();
   getRandomBeer.bindEvents();
