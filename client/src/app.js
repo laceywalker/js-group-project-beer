@@ -1,8 +1,6 @@
 
 import { bindEventsMap } from './views/mapview.js';
 
-const PubSub = require('./helpers/pub_sub.js');
-
 const Beers = require('./models/beers.js');
 const BeerStats = require('./models/beer_stats.js');
 

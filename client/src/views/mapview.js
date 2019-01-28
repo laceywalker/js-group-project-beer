@@ -5,7 +5,7 @@ import * as PubSub from '../helpers/pub_sub.js';
 
 export function bindEventsMap(){
   PubSub.subscribe('Beers:data-loaded', event => {
-    Map();
+    Map(event.detail);
   });
 }
 
@@ -29,11 +29,11 @@ function Map (data){
   // Configure series
   var polygonTemplate = polygonSeries.mapPolygons.template;
   polygonTemplate.tooltipText = '{name}';
-  polygonTemplate.fill = am4core.color('#74B266');
+  polygonTemplate.fill = am4core.color('#ff9900');
 
   // Create hover state and set alternative fill color
   var hs = polygonTemplate.states.create('hover');
-  hs.properties.fill = am4core.color('#367B25');
+  hs.properties.fill = am4core.color('#FFFF00');
 
   // Remove Antarctica
   polygonSeries.exclude = ['AQ'];
@@ -44,7 +44,7 @@ function Map (data){
     'fill': am4core.color('#F05C5C')
   }, {
     'id': 'FR',
-    'fill': am4core.color('#5C5CFF')
+    'fill': am4core.color('#F05C5C')
   }];
 
   // Bind 'fill' property to 'fill' key in data
@@ -54,5 +54,5 @@ function Map (data){
   chart.seriesContainer.draggable = false;
   chart.seriesContainer.resizable = false;
   chart.seriesContainer.wheelable = false;
-};
+}
 
