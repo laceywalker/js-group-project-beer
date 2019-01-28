@@ -52,14 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
   beers.bindEvents();
   beers.getData();
 
-  // const selectElement = document.querySelector('#countries');
-  // const selectView = new SelectView(selectElement);
-  // selectView.bindEvents();
+  const selectElement = document.querySelector('#countries');
+  const selectView = new SelectView(selectElement);
+  selectView.bindEvents();
 
   const countriesUrl = "https://restcountries.eu/rest/v2/all";
   const countries = new Countries(countriesUrl);
-  // countries.bindEvents();
+  countries.bindEvents();
   countries.getData();
-  console.log(countries)
 
 });
