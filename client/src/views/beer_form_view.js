@@ -21,7 +21,7 @@ BeerFormView.prototype.createBeer = function (container) {
   const newBeerInput = {
     name: container.name.value,
     brewery: container.brewery.value,
-    country: container.country.value,
+    country: container.countries.value,
     abv: container.abv.value,
     type: container.type.value,
     description: container.description.value,

@@ -8,7 +8,7 @@ const BeerStatsView = function (container) {
 BeerStatsView.prototype.bindEvents = function(){
   PubSub.subscribe('BeerStats:BeerStatsCalculated', event => {
     this.statsData = event.detail;
-    console.table(this.statsData);
+    // console.table(this.statsData);
     this.container.innerHTML = '';
     this.renderStats();
   });

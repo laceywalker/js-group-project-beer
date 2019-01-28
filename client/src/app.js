@@ -13,6 +13,9 @@ const RandomBeerView = require('./views/random_beer_view.js');
 const EditView = require('./views/edit_view.js');
 const BeerStatsView = require('./views/beer_stats_view.js');
 
+const Countries = require('./models/countries.js');
+const SelectView = require('./views/select_view.js');
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -53,6 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
   beers.getData();
 
   bindEventsMap();
+  const selectElement = document.querySelector('#countries');
+  const selectView = new SelectView(selectElement);
+  selectView.bindEvents();
+
+  const countriesUrl = "https://restcountries.eu/rest/v2/all";
+  const countries = new Countries(countriesUrl);
+  countries.getData();
 
 });
 

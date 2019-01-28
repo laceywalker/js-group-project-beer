@@ -35,6 +35,14 @@ BeerView.prototype.render = function() {
   const beerDescription = this.createDetailList(`Description: ${this.beer.description}`);
   drankBeerContainer.appendChild(beerDescription);
 
+  // const beerDate = this.createElement('li');
+  // const dateToAdd = new Date(this.beer.date);
+  // const dateDay = dateToAdd.getDate();
+  // const dateMonth = dateToAdd.getMonth();
+  // const dateYear = dateToAdd.getFullYear();
+  // beerDate.textContent = `Date Consumed: ${dateDay}/${dateMonth}/${dateYear}`;
+  // drankBeerContainer.appendChild(beerDate);
+
   const deleteButton = this.createDeleteButton();
   drankBeerContainer.appendChild(deleteButton);
 
@@ -74,6 +82,7 @@ BeerView.prototype.createDeleteButton = function () {
 BeerView.prototype.createUpdateButton = function () {
   const button = document.createElement('button');
   button.classList.add('update-btn');
+  button.textContent = "Edit";
   button.addEventListener('click', (evt) => {
     PubSub.publish('BeerView:update-button-clicked', this.beer);
   });
