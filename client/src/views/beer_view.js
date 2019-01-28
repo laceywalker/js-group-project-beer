@@ -74,6 +74,7 @@ BeerView.prototype.createDeleteButton = function () {
 BeerView.prototype.createUpdateButton = function () {
   const button = document.createElement('button');
   button.classList.add('update-btn');
+  button.textContent = "Edit";
   button.addEventListener('click', (evt) => {
     PubSub.publish('BeerView:update-button-clicked', this.beer);
   });
