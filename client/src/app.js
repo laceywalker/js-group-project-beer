@@ -3,7 +3,7 @@ const Beers = require('./models/beers.js');
 const BeerListView = require('./views/beer_list_view.js');
 const BeerFormView = require('./views/beer_form_view.js');
 const BeerStats = require('./models/beer_stats.js');
-const RandomBeerGenerator = require('./models/random_beer_generator.js')
+const RandomBeerButtonView = require('./views/random_beer_button_view.js')
 const RandomBeerView = require('./views/random_beer_view.js')
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,16 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const beerContainer = document.querySelector('#drank-beer-list');
-  // console.log(beerContainer);
   const beerListView = new BeerListView(beerContainer);
   beerListView.bindEvents();
 
   const randomBeerContainer = document.querySelector('#random-beer');
+  // console.log(randomBeerContainer);
   const randomBeerView = new RandomBeerView(randomBeerContainer)
   randomBeerView.bindEvents();
 
-  const getRandomBeer = new RandomBeerGenerator();
-  getRandomBeer.bindEvents();
+  // debugger
+  const randomBeerButton = new RandomBeerButtonView(randomBeerContainer);
+  randomBeerButton.bindEvents();
 
   const url = "http://localhost:3000/api/beers";
   const beers = new Beers(url);
