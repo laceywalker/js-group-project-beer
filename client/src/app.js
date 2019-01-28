@@ -4,7 +4,7 @@ const BeerStats = require('./models/beer_stats.js');
 const BeerListView = require('./views/beer_list_view.js');
 const BeerFormView = require('./views/beer_form_view.js');
 
-const BeerStats = require('./models/beer_stats.js');
+
 const EditView = require('./views/edit_view.js');
 const BeerStatsView = require('./views/beer_stats_view.js');
 
