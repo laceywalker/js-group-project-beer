@@ -9,7 +9,7 @@ const RandomBeerView = function (container, element) {
 RandomBeerView.prototype.bindEvents = function () {
   PubSub.subscribe('Beers:random-beer-generated', (evt) => {
     this.randomBeer = evt.detail;
-    // debugger;
+
     this.render(this.container)
     console.log(evt.detail);
   })

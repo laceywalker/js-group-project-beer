@@ -9,14 +9,13 @@ const EditView = function(divContainer, editForm) {
 
 EditView.prototype.bindEvents = function () {
   PubSub.subscribe('BeerView:update-button-clicked', (evt) => {
-    this.container.style.visibility = "visible"
+    this.container.style.display = "block";
     this.beer = evt.detail;
     this.populateEditBox();
   })
   this.form.addEventListener('submit', (evt) => {
     this.handleSubmit(evt);
   })
-      // this.container.style.visibility = "hidden"
 };
 
 EditView.prototype.populateEditBox = function () {
@@ -32,7 +31,7 @@ EditView.prototype.populateEditBox = function () {
 EditView.prototype.handleSubmit = function (evt) {
   evt.preventDefault();
   const updatedBeerInput = this.createUpdatedBeer(evt.target);
-  console.log(updatedBeerInput)
+  this.container.style.display = "none";
   PubSub.publish('EditView:updated-beer-submit', updatedBeerInput);
 };
 
