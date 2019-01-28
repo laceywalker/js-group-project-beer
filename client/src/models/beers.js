@@ -8,7 +8,7 @@ const Beers = function(url) {
 
 
 Beers.prototype.bindEvents = function () {
-  PubSub.subscribe('BeerListView:beer-update-clicked', (evt) => {
+  PubSub.subscribe('EditView:updated-beer-submit', (evt) => {
     this.updateBeer(evt.detail);
   });
 
