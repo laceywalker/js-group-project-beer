@@ -8,6 +8,7 @@ const BeerFormView = require('./views/beer_form_view.js');
 const EditView = require('./views/edit_view.js');
 const BeerStatsView = require('./views/beer_stats_view.js');
 
+const MapView = require('./views/mapview.js');
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -35,5 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const beers = new Beers(url);
   beers.bindEvents();
   beers.getData();
-
+  
+  const mapView = new MapView;
 });

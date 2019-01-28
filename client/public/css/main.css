@@ -223,3 +223,8 @@ width: 40px;
   length: 500px;
   visibility: hidden;
 }
+
+#mapdiv {
+width: 75%;
+height: 500px;
+}
