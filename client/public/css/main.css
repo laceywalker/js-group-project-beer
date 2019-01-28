@@ -42,7 +42,7 @@ body{
   text-align: center;
   padding: 20px;
   background-color: #FFDAB9;
-  
+
 }
 
 h1{
@@ -215,4 +215,15 @@ button:hover{
 
 .beerPic img{
 width: 40px;
+}
+
+.footer {
+
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: brown;
+   color: white;
+   text-align: center;
+   
 }
