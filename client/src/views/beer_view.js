@@ -6,7 +6,6 @@ const BeerView = function(container) {
 
 
 BeerView.prototype.render = function(beer) {
-  this.beer = beer;
 
   const drankBeerContainer = document.createElement('section');
   drankBeerContainer.id = 'beer';
@@ -74,9 +73,9 @@ BeerView.prototype.createDeleteButton = function (beerId) {
 BeerView.prototype.createUpdateButton = function (beer) {
   const button = document.createElement('button');
   button.classList.add('update-btn');
-  button.value = beer;
+  const beerToUpdate = beer;
   button.addEventListener('click', (evt) => {
-    PubSub.publish('BeerView:update-button-clicked', this.beer);
+    PubSub.publish('BeerView:update-button-clicked', beerToUpdate);
   });
   return button;
 };

@@ -48,7 +48,6 @@ Beers.prototype.deleteBeer = function (beerId) {
   };
 
   Beers.prototype.updateBeer = function (beerToUpdate) {
-    console.log(beerToUpdate)
     const id = beerToUpdate._id;
     this.request
       .put(beerToUpdate, id)

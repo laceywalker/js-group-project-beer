@@ -9,38 +9,27 @@ const EditView = function(divContainer, editForm) {
 EditView.prototype.bindEvents = function () {
   PubSub.subscribe('BeerView:update-button-clicked', (evt) => {
     this.container.style.visibility = "visible"
-    const updatedBeer = this.renderEditBox(evt.detail);
-    PubSub.publish('EditView:updated-beer-submit', updatedBeer);
+    const updatedBeer = this.populateEditBox(evt.detail);
+
+
   });
-
-    // PubSub.publish('EditView:updated-beer-submit', updatedBeer);
+  // PubSub.publish('EditView:updated-beer-submit', updatedBeer);
       // this.container.style.visibility = "hidden"
+      // PubSub.publish('EditView:updated-beer-submit', updatedBeer);
 };
 
 
-EditView.prototype.renderEditBox = function (container) {
-  const updatedBeerInput = {
-    name: container.name.value
-  }
-  return updatedBeerInput;
+EditView.prototype.populateEditBox = function (beer) {
+  console.table(beer);
+  this.form.name.value = beer.name;
+  this.form.brewery.value = beer.brewery;
+  this.form.country.value = beer.country;
+  this.form.abv.value = beer.abv;
+  this.form.type.value = beer.type;
+  this.form.description.value = beer.description;
+  this.form.rating.value = beer.rating;
 };
 
 
-
-
-
-// BeerFormView.prototype.createBeer = function (container) {
-//   const newBeerInput = {
-//     name: container.name.value,
-//     brewery: container.brewery.value,
-//     country: container.country.value,
-//     abv: container.abv.value,
-//     type: container.type.value,
-//     description: container.description.value,
-//     rating: container.rating.value
-//     // date: container.date.value,
-//   }
-//   return newBeerInput;
-// };
 
 module.exports = EditView;

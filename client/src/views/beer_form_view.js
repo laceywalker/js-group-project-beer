@@ -26,7 +26,7 @@ BeerFormView.prototype.createBeer = function (container) {
     type: container.type.value,
     description: container.description.value,
     rating: container.rating.value
-    // date: container.date.value,
+    // date: container.date.value
   }
   return newBeerInput;
 };
