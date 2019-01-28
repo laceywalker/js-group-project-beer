@@ -9,6 +9,10 @@ const Beers = function(url) {
 
 
 Beers.prototype.bindEvents = function () {
+  PubSub.subscribe('BeerListView:beer-update-clicked', (evt) => {
+    this.updateBeer(evt.detail);
+  });
+
   PubSub.subscribe('BeerListView:beer-delete-clicked', (evt) => {
     this.deleteBeer(evt.detail);
   });
@@ -53,6 +57,17 @@ Beers.prototype.getRandomBeer = function(){
   const randomBeer = this.beers[Math.floor(Math.random() * this.beers.length)];
   return randomBeer
 }
+
+  Beers.prototype.updateBeer = function (beerToUpdate) {
+    console.log(beerToUpdate)
+    const id = beerToUpdate._id;
+    this.request
+      .put(beerToUpdate, id)
+      .then((beers) => {
+        PubSub.publish('Beers:data-loaded', beers);
+      })
+      .catch(console.error);
+    };
 
 
 

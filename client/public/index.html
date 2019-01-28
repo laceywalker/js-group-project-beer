@@ -5,10 +5,75 @@
     <title>Beatz N Brewz</title>
     <script src="/js/bundle.js"></script>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <h1>New Year's Resolution: Drink More Beer!</h1>
+    <nav class='navbar'>
+        <ul>
+      <li><a href="default.asp">Home</a></li>
+      <li><a href="news.asp">News</a></li>
+      <li><a href="contact.asp">Contact</a></li>
+      <li><a href="about.asp">About</a></li>
+
+
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
+    </ul>
+        </nav>
+
+<div id='title'>
+  <h1>New Year's Resolution: Drink More Beer!</h1>
+</div>
     <form id="form">
+      <div>
+        <label for="name">Name:</label>
+        <input required type="text" id="name"/>
+      </div>
+      <div>
+        <label for="brewery">Brewery:</label>
+        <input type="text" id="brewery"/>
+      </div>
+      <div>
+        <label for="country">Country:</label>
+        <input type="text" id="country"/>
+      </div>
+      <div>
+        <label for="abv">ABV:</label>
+        <input required type="number" id="abv"/>
+      </div>
+      <select>
+        <label for="type">Type:</label>
+        <option value="lager">Lager</option>
+        <option value="ale">Ale</option>
+        <option value="dark">Dark</option>
+      </select>
+      <div class="form-item">
+        <label for="description">Description:</label>
+        <input type="text" id="description"/>
+      </div>
+      <div class="form-item">
+        <label for="date-consumed">Date Consumed:<label>
+        <input type="date" id="date-consumed">
+      </div>
+      <div class="form-item">
+        <label for"upload-photo">Upload a Photo:</label>
+        <input type="text" id="upload-photo">
+      </div>
+      <div class="form-item">
+       <label for="rating" class="primary">Rating</label>
+       <input required type="radio" name="rating" value="5">5</input>
+       <input type="radio" name="rating" value="4">4</input>
+       <input type="radio" name="rating" value="3">3</input>
+       <input type="radio" name="rating" value="2">2</input>
+       <input type="radio" name="rating" value="1">1</input>
+     </div>
+      <input type="submit" value="Save" id="save"/>
+    </form>
+
+
+    <div id="edit-div">
+      <form id="edit-form">
       <div>
         <label for="name">Name:</label>
         <input type="text" id="name"/>
@@ -26,6 +91,7 @@
         <input type="number" id="abv"/>
       </div>
       <select>
+        <label for="type">Type:</label>
         <option value="lager">Lager</option>
         <option value="ale">Ale</option>
         <option value="dark">Dark</option>
@@ -33,6 +99,14 @@
       <div class="form-item">
         <label for="description">Description:</label>
         <input type="text" id="description"/>
+      </div>
+      <div class="form-item">
+        <label for="date-consumed">Date Consumed:<label>
+        <input type="date" id="date-consumed">
+      </div>
+      <div class="form-item">
+        <label for"upload-photo">Upload a Photo:</label>
+        <input type="text" id="upload-photo">
       </div>
       <div class="form-item">
        <label for="rating" class="primary">Rating</label>
@@ -44,9 +118,10 @@
      </div>
       <input type="submit" value="Save" id="save"/>
     </form>
-
+</div>
     <section id="stats">
     </section>
+
     <h2>Beers I done did drank:</h2>
     <section id="drank-beer-list">
     </section>
