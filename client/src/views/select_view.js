@@ -8,21 +8,16 @@ SelectView.prototype.bindEvents = function () {
   PubSub.subscribe('Countries:countries-data-ready', (evt) => {
     this.populate(evt.detail)
   });
-
-  this.element.addEventListener('change', (evt) => {
-    const selectedIndex = evt.target.value;
-    PubSub.publish('SelectView:change', selectedIndex);
-  })
 };
 
 SelectView.prototype.populate = function (countries) {
-  countries.forEach((country, index) => {
-    const countryOption = this.createOption(country.name, index);
+  countries.forEach((country) => {
+    const countryOption = this.createOption(country.name);
     this.element.appendChild(countryOption);
   });
 };
 
-SelectView.prototype.createOption = function (name, index) {
+SelectView.prototype.createOption = function (name) {
   const option = document.createElement('option');
   option.textContent = name;
   option.value = name;

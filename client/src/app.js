@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const countriesUrl = "https://restcountries.eu/rest/v2/all";
   const countries = new Countries(countriesUrl);
-  countries.bindEvents();
   countries.getData();
 
 });
