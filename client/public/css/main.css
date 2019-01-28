@@ -41,4 +41,5 @@ section {
   background: pink;
   width: 500px;
   length: 500px;
+  visibility: hidden;
 }

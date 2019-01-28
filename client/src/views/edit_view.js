@@ -4,23 +4,23 @@ const EditView = function(divContainer, editForm) {
   this.container = divContainer;
   this.form = editForm;
 };
-// make a new div in index html- and a new edit form -  edit of
-// the form  BUT pulls through the information- then
+
 // // could make an invisible form in index.html and a method which changes
 // hidden to non-hidden to the bind bindEvents
 EditView.prototype.bindEvents = function () {
   PubSub.subscribe('BeerView:edit-view-open', (evt) => {
+    // debugger;
     this.container.style.visibility = "visible"
-    this.render(evt.detail);
+    // this.renderEditBox(evt.detail);
   });
 
-  PubSub.publish('BeerListView:beer-update-clicked', evt.target.value);
+  // PubSub.publish('BeerListView:beer-update-clicked', evt.target.value);
 };
 
 
-// the render will bring up the form - write this in html and if possible pre-filled out with
-// current information
+// EditView.prototype.renderEditBox = function (evt) {
+//     this.container.style.visibility = "visible";
+// };
 
-// then
 
 module.exports = EditView;
