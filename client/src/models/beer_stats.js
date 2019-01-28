@@ -8,9 +8,6 @@ const BeerStats = function(){
 BeerStats.prototype.bindEvents = function(){
   PubSub.subscribe('Beers:data-loaded', event => {
     this.beerArray = event.detail;
-    if (this.beerArray = []) {
-      return;
-    }
     this.calculateStats();
     PubSub.publish('BeerStats:BeerStatsCalculated', this.beerStats);
   });
