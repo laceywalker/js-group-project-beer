@@ -18,15 +18,14 @@ BeerFormView.prototype.handleSubmit = function (evt) {
 };
 
 BeerFormView.prototype.createBeer = function (container) {
-  // console.log(container.dated)
   const newBeerInput = {
     name: container.name.value,
     brewery: container.brewery.value,
-    country: container.country.value,
+    country: container.countries.value,
     abv: container.abv.value,
     type: container.type.value,
     description: container.description.value,
-    rating: container.rating.value,
+    rating: container.rating.value
     // date: container.date.value
   }
   return newBeerInput;

@@ -25,7 +25,7 @@ SelectView.prototype.populate = function (countries) {
 SelectView.prototype.createOption = function (name, index) {
   const option = document.createElement('option');
   option.textContent = name;
-  option.value = index;
+  option.value = name;
   return option;
 };
 
