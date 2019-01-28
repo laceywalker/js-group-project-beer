@@ -4,26 +4,32 @@ const RequestHelper = require('../helpers/request_helper.js');
 const Beers = function(url) {
   this.url = url;
   this.request = new RequestHelper(this.url);
+  this.beers = null;
 };
 
 
 Beers.prototype.bindEvents = function () {
-  PubSub.subscribe('BeerListView:beer-update-clicked', (evt) => {
+  PubSub.subscribe('EditView:updated-beer-submit', (evt) => {
     this.updateBeer(evt.detail);
   });
 
   PubSub.subscribe('BeerListView:beer-delete-clicked', (evt) => {
     this.deleteBeer(evt.detail);
   });
-
   PubSub.subscribe('BeerFormView:New Beer Submit', (evt) => {
     this.postBeer(evt.detail);
-  });
+  })
+  PubSub.subscribe('RandomBeerButtonView:random-beer-clicked', () => {
+    // debugger
+    const randomBeer = this.getRandomBeer();
+    PubSub.publish('Beers:random-beer-generated', randomBeer);
+  })
 };
 
 Beers.prototype.getData = function () {
   this.request.get()
   .then((beers) => {
+    this.beers = beers;
     PubSub.publish('Beers:data-loaded', beers);
     // console.log(beers)
   })
@@ -45,11 +51,15 @@ Beers.prototype.deleteBeer = function (beerId) {
       PubSub.publish('Beers:data-loaded', beers);
     })
     .catch(console.error);
-  };
+};
+
+Beers.prototype.getRandomBeer = function(){
+  const randomBeer = this.beers[Math.floor(Math.random() * this.beers.length)];
+  return randomBeer
+}
 
   Beers.prototype.updateBeer = function (beerToUpdate) {
-    console.log(beerToUpdate)
-    const id = beerToUpdate._id;
+    const id = beerToUpdate.id;
     this.request
       .put(beerToUpdate, id)
       .then((beers) => {

@@ -6,6 +6,7 @@
     <script src="/js/bundle.js"></script>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href ="/assets/logo_notext_trans.png" />
   </head>
   <body>
     <nav class='navbar'>
@@ -42,12 +43,10 @@
         <label for="abv">ABV:</label>
         <input required type="number" id="abv"/>
       </div>
-      <select>
+      <div class="form-item">
         <label for="type">Type:</label>
-        <option value="lager">Lager</option>
-        <option value="ale">Ale</option>
-        <option value="dark">Dark</option>
-      </select>
+        <input require type="text" id="type"/>
+      </div>
       <div class="form-item">
         <label for="description">Description:</label>
         <input type="text" id="description"/>
@@ -73,6 +72,7 @@
 
 
     <div id="edit-div">
+      <div id="edit-content">
       <form id="edit-form">
       <div>
         <label for="name">Name:</label>
@@ -90,12 +90,10 @@
         <label for="abv">ABV:</label>
         <input type="number" id="abv"/>
       </div>
-      <select>
+      <div class="form-item">
         <label for="type">Type:</label>
-        <option value="lager">Lager</option>
-        <option value="ale">Ale</option>
-        <option value="dark">Dark</option>
-      </select>
+        <input require type="text" id="type"/>
+      </div>
       <div class="form-item">
         <label for="description">Description:</label>
         <input type="text" id="description"/>
@@ -118,10 +116,8 @@
      </div>
       <input type="submit" value="Save" id="save"/>
     </form>
-    </div>
-
-
-
+  </div>
+</div>
     <section id="stats">
     </section>
 
@@ -130,6 +126,9 @@
     </section>
 
   <section id='mapdiv'></section>
+    <h2>Try A Random Beer</h2>
+    <section id="random-beer">
+    </section>
   </body>
 
   </html>

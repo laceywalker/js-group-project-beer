@@ -13,8 +13,10 @@ BeerListView.prototype.bindEvents = function () {
 
 BeerListView.prototype.render = function (element) {
   this.container.innerHTML = '';
-  const beerListView = new BeerView(this.container);
-  element.forEach((beer) => beerListView.render(beer));
+  element.forEach( (beer) => {
+    const beerView = new BeerView(this.container, beer);
+    beerView.render();
+  });
 };
 
 
