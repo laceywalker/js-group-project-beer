@@ -5,22 +5,20 @@ const EditView = function(divContainer, editForm) {
   this.form = editForm;
 };
 
-// // could make an invisible form in index.html and a method which changes
-// hidden to non-hidden to the bind bindEvents
+
 EditView.prototype.bindEvents = function () {
   PubSub.subscribe('BeerView:edit-view-open', (evt) => {
-    // debugger;
     this.container.style.visibility = "visible"
-    // this.renderEditBox(evt.detail);
+    this.renderEditBox(evt.detail);
   });
-
-  // PubSub.publish('BeerListView:beer-update-clicked', evt.target.value);
+    // PubSub.publish('BeerListView:beer-update-clicked', evt.target.value);
+      // this.container.style.visibility = "hidden"
 };
 
 
-// EditView.prototype.renderEditBox = function (evt) {
-//     this.container.style.visibility = "visible";
-// };
+EditView.prototype.renderEditBox = function (evt) {
+
+};
 
 
 module.exports = EditView;
