@@ -35,6 +35,14 @@ BeerView.prototype.render = function() {
   const beerDescription = this.createDetailList(`Description: ${this.beer.description}`);
   drankBeerContainer.appendChild(beerDescription);
 
+  // const beerDate = this.createElement('li');
+  // const dateToAdd = new Date(this.beer.date);
+  // const dateDay = dateToAdd.getDate();
+  // const dateMonth = dateToAdd.getMonth();
+  // const dateYear = dateToAdd.getFullYear();
+  // beerDate.textContent = `Date Consumed: ${dateDay}/${dateMonth}/${dateYear}`;
+  // drankBeerContainer.appendChild(beerDate);
+
   const deleteButton = this.createDeleteButton();
   drankBeerContainer.appendChild(deleteButton);
 
