@@ -38,6 +38,7 @@ EditView.prototype.handleSubmit = function (evt) {
 
 EditView.prototype.createUpdatedBeer = function () {
   const updatedBeer = {
+    id: this.beer._id,
     name: this.form.name.value,
     brewery: this.form.brewery.value,
     country: this.form.country.value,
