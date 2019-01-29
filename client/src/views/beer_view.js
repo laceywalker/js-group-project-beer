@@ -29,19 +29,17 @@ BeerView.prototype.render = function() {
   const beerType = this.createDetailList(`Type: ${this.beer.type}`);
   drankBeerContainer.appendChild(beerType);
 
-  const beerCountry = this.createDetailList(`Country: ${this.beer.country}`);
+  const beerCountry = this.createDetailList(`Country: ${this.beer.country}`.slice(0, -3));
   drankBeerContainer.appendChild(beerCountry);
 
   const beerDescription = this.createDetailList(`Description: ${this.beer.description}`);
   drankBeerContainer.appendChild(beerDescription);
 
-  // const beerDate = this.createElement('li');
-  // const dateToAdd = new Date(this.beer.date);
-  // const dateDay = dateToAdd.getDate();
-  // const dateMonth = dateToAdd.getMonth();
-  // const dateYear = dateToAdd.getFullYear();
-  // beerDate.textContent = `Date Consumed: ${dateDay}/${dateMonth}/${dateYear}`;
-  // drankBeerContainer.appendChild(beerDate);
+  const beerDate = document.createElement('li');
+  const dateToAdd = new Date(this.beer.date);
+  formattedDate = dateToAdd.toLocaleDateString();
+  beerDate.textContent = `Date Consumed: ${formattedDate}`;
+  drankBeerContainer.appendChild(beerDate);
 
   const deleteButton = this.createDeleteButton();
   drankBeerContainer.appendChild(deleteButton);

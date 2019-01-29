@@ -6,16 +6,17 @@ db.beers.insertMany([
   {
     name: "Tennents Lager",
     brewery: "Tennents Brewery",
-    country: "UK",
+    country: "UK,GB",
     abv: 4,
     type: "lager",
     description: "Great tidelines, foamy head, impeccable session lager",
-    rating: 5
+    rating: 5,
+    date: '2011/11/11'
   },
   {
     name: "Joker IPA",
     brewery: "Williams Brothers",
-    country: "UK",
+    country: "UK,GB",
     abv: 5,
     type: "IPA",
     description: "Intense, wickedly hoppy",
@@ -24,7 +25,7 @@ db.beers.insertMany([
   {
     name: "Miller Highlife",
     brewery: "Miller Brewing Co",
-    country: "USA",
+    country: "USA,GB",
     abv: 4.6,
     type: "lager",
     description: "The champagne of beers",
@@ -33,7 +34,7 @@ db.beers.insertMany([
   {
     name: "Peroni",
     brewery: "Peroni Brewery",
-    country: "Italy",
+    country: "Italy,IT",
     abv: 5.1,
     type: "lager",
     description: "I get this beer from Tesco",
