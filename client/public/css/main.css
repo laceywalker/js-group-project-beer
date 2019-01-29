@@ -217,7 +217,6 @@ button:hover{
 width: 40px;
 }
 
-<<<<<<< HEAD
 .footer {
 
    left: 0;
@@ -226,8 +225,7 @@ width: 40px;
    background-color: brown;
    color: white;
    text-align: center;
-   
-=======
+}
 
 #edit-div {
  display: none; /* Hidden by default */
@@ -254,5 +252,4 @@ width: 40px;
 #chartdiv {
   width: 50%;
   height: 400px;
->>>>>>> dev
 }
