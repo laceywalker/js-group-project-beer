@@ -6,7 +6,7 @@ db.beers.insertMany([
   {
     name: "Tennents Lager",
     brewery: "Tennents Brewery",
-    country: "UK,GB",
+    country: "United Kingdom of Great Britain and Northern Ireland,GB",
     abv: 4,
     type: "lager",
     description: "Great tidelines, foamy head, impeccable session lager",
@@ -16,11 +16,12 @@ db.beers.insertMany([
   {
     name: "Joker IPA",
     brewery: "Williams Brothers",
-    country: "UK,GB",
+    country: "United Kingdom of Great Britain and Northern Ireland,GB",
     abv: 5,
     type: "IPA",
     description: "Intense, wickedly hoppy",
-    rating: 5
+    rating: 5,
+    date: '2019/01/10'
   },
   {
     name: "Miller Highlife",
@@ -29,7 +30,8 @@ db.beers.insertMany([
     abv: 4.6,
     type: "lager",
     description: "The champagne of beers",
-    rating: 2
+    rating: 2,
+    date: '2019/01/15'
   },
   {
     name: "Peroni",
@@ -48,8 +50,6 @@ db.beers.insertMany([
     abv: 5.1,
     type: "wheat beer",
     description: "I get this beer from Tesco",
-
-
     rating: 5,
     date: '2019/01/01'
   },
@@ -65,7 +65,7 @@ db.beers.insertMany([
   },
   {
     name: "Tsingtao",
-    brewery: "Tsingtao Brewery ",
+    brewery: "Tsingtao Brewery",
     country: "China,CN",
     abv: 4.8,
     type: "lager",
@@ -112,6 +112,5 @@ db.beers.insertMany([
     description: "Good session lager.",
     rating: 3,
     date: '2019/01/01'
-
   }
 ]);
