@@ -46,12 +46,14 @@ EditView.prototype.handleSubmit = function (evt) {
 };
 
 EditView.prototype.createUpdatedBeer = function () {
+  const select = this.form['edit-countries']
+  const value = select.options[select.selectedIndex].value;
 
   const updatedBeer = {
     id: this.beer._id,
     name: this.form.name.value,
     brewery: this.form.brewery.value,
-    country: this.form['edit-countries'].selectedIndex.value,
+    country: value,
     abv: this.form.abv.value,
     type: this.form.type.value,
     description: this.form.description.value,
