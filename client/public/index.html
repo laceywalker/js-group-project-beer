@@ -8,24 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href ="/assets/logo_notext_trans.png" />
   </head>
+
   <body>
     <nav class='navbar'>
-        <ul>
-      <li><a href="default.asp">Home</a></li>
-      <li><a href="news.asp">News</a></li>
-      <li><a href="contact.asp">Contact</a></li>
-      <li><a href="about.asp">About</a></li>
+      <ul>
+        <li><a href="default.asp">Home</a></li>
+        <li><a href="news.asp">News</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+      </ul>
+    </nav>
 
+    <div id='title'>
+      <h1>New Year's Resolution: Drink More Beer!</h1>
+    </div>
 
-      <a href="#" class="fa fa-facebook"></a>
-      <a href="#" class="fa fa-twitter"></a>
-      <a href="#" class="fa fa-instagram"></a>
-    </ul>
-        </nav>
-
-<div id='title'>
-  <h1>New Year's Resolution: Drink More Beer!</h1>
-</div>
+    <section id='chartdiv'></section>
     <form id="form">
       <div>
         <label for="name">Name:</label>
@@ -74,7 +75,6 @@
 
 
     <div id="edit-div">
-      <div id="edit-content">
       <form id="edit-form">
       <div>
         <label for="name">Name:</label>
@@ -116,19 +116,25 @@
        <input type="radio" name="rating" value="2">2</input>
        <input type="radio" name="rating" value="1">1</input>
      </div>
-      <input type="submit" value="Save" id="save"/>
+        <input type="submit" value="Save" id="save"/>
     </form>
-  </div>
-</div>
+    </div>
+    </div>
     <section id="stats">
     </section>
 
     <h2>Beers I done did drank:</h2>
     <section id="drank-beer-list">
     </section>
+
     <h2>Try A Random Beer</h2>
     <section id="random-beer">
     </section>
-  </body>
 
+    <div class="footer">
+      <p>Please drink responsibly</p>
+    </div>
+
+  <p>Copyright &copy; CodeClan-e27-Sláinte</p>
+  </body>
   </html>

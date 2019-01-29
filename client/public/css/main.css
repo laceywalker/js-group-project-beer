@@ -42,6 +42,7 @@ body{
   text-align: center;
   padding: 20px;
   background-color: #FFDAB9;
+
 }
 
 h1{
@@ -216,6 +217,15 @@ button:hover{
 width: 40px;
 }
 
+.footer {
+
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: brown;
+   color: white;
+   text-align: center;
+}
 
 #edit-div {
  display: none; /* Hidden by default */
@@ -237,4 +247,9 @@ width: 40px;
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+}
+
+#chartdiv {
+  width: 50%;
+  height: 400px;
 }
