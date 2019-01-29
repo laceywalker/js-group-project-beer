@@ -40,7 +40,9 @@ section{
   height: 90vh;
 }
 
-.Stats { grid-area: 3 / 2 / 4 / 3; }
+.Stats { grid-area: 3 / 2 / 4 / 3;
+margin-top: 20px;
+}
 
 .Footer { grid-area: 4 / 1 / 5 / 3; }
 
@@ -55,6 +57,7 @@ overflow-y:scroll;
 
 .Logo img {
 height:200px;
+margin:30px;
 }
 
 .beer{
@@ -206,6 +209,7 @@ button:hover{
 #stats{
   text-align: left;
   border: 2px solid black;
+  padding:20px;
 }
 
 /*
@@ -249,7 +253,7 @@ width: 40px;
 }
 
 #chartdiv {
-  height:300px;
+  height:500px;
 }
 
 #random-beer-container {
