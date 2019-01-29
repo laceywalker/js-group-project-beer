@@ -1,8 +1,9 @@
 body{
   font-family: 'Major Mono Display', monospace;
   text-align: center;
-  padding: 20px;
   background-color: #FFDAB9;
+  padding: 0px;
+  margin: 0px;
 
 }
 
@@ -29,6 +30,31 @@ section{
   text-align: left;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 3fr 6fr 5fr 1fr;
+  height: 90vh;
+}
+
+.Stats { grid-area: 3 / 2 / 4 / 3; }
+
+.Footer { grid-area: 4 / 1 / 5 / 3; }
+
+.beerContent { grid-area: 1 / 1 / 4 / 2;
+overflow-y:scroll;
+}
+
+
+.Form-Grid { grid-area: 2 / 2 / 3 / 3; }
+
+.Logo { grid-area: 1 / 2 / 2 / 3; }
+
+.Logo img {
+height:200px;
 }
 
 .beer{
@@ -84,11 +110,11 @@ margin-bottom: 5px;
   height: 60px;
   color: #000066;
   border-radius: 10px;
+  margin: 0px;
 }
 
 #form {
   background-color: #ff9900;
-  width: 250px;
   text-align: left;
   padding: 20px;
 }
@@ -192,7 +218,6 @@ width: 40px;
 }
 
 .footer {
-
    left: 0;
    bottom: 0;
    width: 100%;
@@ -224,8 +249,7 @@ width: 40px;
 }
 
 #chartdiv {
-  width: 50%;
-  height: 400px;
+  height:300px;
 }
 
 #random-beer-container {
@@ -239,6 +263,10 @@ width: 40px;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#random-main-container h2 {
+display: inline;
 }
 
 /* Modal Content/Box */
