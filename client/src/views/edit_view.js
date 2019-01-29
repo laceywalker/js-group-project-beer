@@ -28,15 +28,10 @@ EditView.prototype.populateEditBox = function () {
 
     const selectLength = countrySelect.options.length -1
     for (let i = 0; i < selectLength; i++){
-      console.log(countryName)
       if (countrySelect.options[i].textContent === countryName) {
         countrySelect.selectedIndex = i;
-        console.log('here', i)
       };
     };
-
-
-
     this.form.abv.value = this.beer.abv;
     this.form.type.value = this.beer.type;
     this.form.description.value = this.beer.description;
@@ -51,11 +46,12 @@ EditView.prototype.handleSubmit = function (evt) {
 };
 
 EditView.prototype.createUpdatedBeer = function () {
+
   const updatedBeer = {
     id: this.beer._id,
     name: this.form.name.value,
     brewery: this.form.brewery.value,
-    // country: this.form.country.value,
+    country: this.form['edit-countries'].selectedIndex.value,
     abv: this.form.abv.value,
     type: this.form.type.value,
     description: this.form.description.value,
