@@ -37,11 +37,8 @@ BeerView.prototype.render = function() {
 
   const beerDate = document.createElement('li');
   const dateToAdd = new Date(this.beer.date);
-  // console.log(this.beer.date)
-  // const dateDay = dateToAdd.getDate();
-  // const dateMonth = dateToAdd.getMonth();
-  // const dateYear = dateToAdd.getFullYear();
-  beerDate.textContent = `Date Consumed: ${dateDay}/${dateMonth}/${dateYear}`;
+  formattedDate = dateToAdd.toLocaleDateString();
+  beerDate.textContent = `Date Consumed: ${formattedDate}`;
   drankBeerContainer.appendChild(beerDate);
 
   const deleteButton = this.createDeleteButton();
