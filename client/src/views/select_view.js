@@ -12,15 +12,15 @@ SelectView.prototype.bindEvents = function () {
 
 SelectView.prototype.populate = function (countries) {
   countries.forEach((country) => {
-    const countryOption = this.createOption(country.name);
+    const countryOption = this.createOption(country.name, country.alpha2Code);
     this.element.appendChild(countryOption);
   });
 };
 
-SelectView.prototype.createOption = function (name) {
+SelectView.prototype.createOption = function (name, countryCode) {
   const option = document.createElement('option');
   option.textContent = name;
-  option.value = name;
+  option.value = [name, countryCode]
   return option;
 };
 
