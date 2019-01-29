@@ -45,10 +45,10 @@ function Map (processedArray){
   // Bind 'fill' property to 'fill' key in data
   polygonTemplate.propertyFields.fill = 'fill';
 
-  chart.maxZoomLevel = 1;
-  chart.seriesContainer.draggable = false;
-  chart.seriesContainer.resizable = false;
-  chart.seriesContainer.wheelable = false;
+//  chart.maxZoomLevel = 1;
+//  chart.seriesContainer.draggable = false;
+//  chart.seriesContainer.resizable = false;
+//  chart.seriesContainer.wheelable = false;
 }
 
 function processBeers(arrayOfBeers){
