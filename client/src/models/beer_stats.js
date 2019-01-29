@@ -26,15 +26,15 @@ BeerStats.prototype.calculateStats = function(){
   const averageABV = this.averageABV();
 
   // Package the various stats into an object for publication
-  
-  this.beerStats = 
+
+  this.beerStats =
     {
       'numBeersDrank': numBeersDrank,
       //'worstBeer': worstBeer,
       //'favouriteCountry': favouriteCountry,
       'averageRating': averageRating,
       'averageABV': averageABV
-    }; 
+    };
 };
 
 BeerStats.prototype.favouriteBeer = function(){
@@ -48,8 +48,8 @@ BeerStats.prototype.favouriteBeer = function(){
 //    if (Number(beer.rating) < worstBeerRating){
 //      worstBeerRating = Number(beer.rating);
 //      worstBeerIndex = index;
-//    } 
-//  }); 
+//    }
+//  });
 //}
 
 BeerStats.prototype.favouriteCountry = function(){
@@ -60,7 +60,7 @@ BeerStats.prototype.averageRating = function(){
   // This function takes in a list of beers objects and returns the average rating of each
   const ratingsArray = this.beerArray.map( beer => Number(beer.rating) );
   const ratingsAvg = (
-    ratingsArray.reduce((acc, rating) => acc + rating) 
+    ratingsArray.reduce((acc, rating) => acc + rating)
     / ratingsArray.length
   ).toFixed(2);
   return ratingsAvg;
@@ -71,7 +71,7 @@ BeerStats.prototype.averageABV = function(){
   // This function takes in a list of beer objects and returns the average ABV
   const abvArray = this.beerArray.map( beer => Number(beer.abv) );
   const abvAvg = (
-    abvArray.reduce((acc, abv) => acc + abv) 
+    abvArray.reduce((acc, abv) => acc + abv)
     / abvArray.length
   ).toFixed(2);
   return abvAvg;

@@ -7,8 +7,8 @@ const BeerStatsView = function (container) {
 
 BeerStatsView.prototype.bindEvents = function(){
   PubSub.subscribe('BeerStats:BeerStatsCalculated', event => {
-    this.statsData = event.detail; 
-    console.table(this.statsData);
+    this.statsData = event.detail;
+    // console.table(this.statsData);
     this.container.innerHTML = '';
     this.renderStats();
   });
@@ -33,15 +33,15 @@ BeerStatsView.prototype.createStatsList = function(){
 };
 
 BeerStatsView.prototype.populateList = function(list){
-  const numberOfBeersLI = document.createElement('li'); 
+  const numberOfBeersLI = document.createElement('li');
   numberOfBeersLI.textContent = `You have quaffed a total of ${this.statsData.numBeersDrank} beers.`;
 
-  const averageRatingLI = document.createElement('li'); 
+  const averageRatingLI = document.createElement('li');
   averageRatingLI.textContent = `On average you gave a beer a rating of ${this.statsData.averageRating} out of 5`;
 
-  const averageStrengthLI = document.createElement('li');  
+  const averageStrengthLI = document.createElement('li');
   averageStrengthLI.textContent = this.strengthDescription();
-  
+
 
 
   list.appendChild(numberOfBeersLI);
@@ -52,7 +52,7 @@ BeerStatsView.prototype.populateList = function(list){
 
 BeerStatsView.prototype.strengthDescription = function(){
   const strengthString = `The average strength of beer you drink is ${this.statsData.averageABV}% ABV. `;
-  const strength = Number(this.statsData.averageABV);  
+  const strength = Number(this.statsData.averageABV);
 
   if (strength < 1){
     return strengthString + 'Homeopathic beer is your style.';
@@ -68,5 +68,3 @@ BeerStatsView.prototype.strengthDescription = function(){
 
 
 module.exports = BeerStatsView;
-
-

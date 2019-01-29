@@ -6,6 +6,7 @@
     <script src="/js/bundle.js"></script>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<<<<<<< HEAD
 
 </head>
   <body>
@@ -15,6 +16,19 @@
       <li><a href="news.html">News</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="about.html">About</a></li>
+=======
+    <link rel="icon" href ="/assets/logo_notext_trans.png" />
+  </head>
+  <body>
+    <nav class='navbar'>
+        <ul>
+      <li><a href="default.asp">Home</a></li>
+      <li><a href="news.asp">News</a></li>
+      <li><a href="contact.asp">Contact</a></li>
+      <li><a href="about.asp">About</a></li>
+
+
+>>>>>>> dev
       <a href="#" class="fa fa-facebook"></a>
       <a href="#" class="fa fa-twitter"></a>
       <a href="#" class="fa fa-instagram"></a>
@@ -24,8 +38,12 @@
 <div id='title'>
   <h1>New Year's Resolution: Drink More Beer!</h1>
 </div>
+<<<<<<< HEAD
 
 
+=======
+  <section id='chartdiv'></section>
+>>>>>>> dev
     <form id="form">
       <div>
         <label for="name">Name:</label>
@@ -36,21 +54,30 @@
         <input type="text" id="brewery"/>
       </div>
       <div>
-        <label for="country">Country:</label>
-        <input type="text" id="country"/>
+        <label for="countries">Select a country:</label>
+        <select id="countries">
+          <option selected disabled></option>
+        </select>
       </div>
       <div>
         <label for="abv">ABV:</label>
         <input required type="number" id="abv"/>
       </div>
-      <select>
-        <option value="lager">Lager</option>
-        <option value="ale">Ale</option>
-        <option value="dark">Dark</option>
-      </select>
+      <div class="form-item">
+        <label for="type">Type:</label>
+        <input require type="text" id="type"/>
+      </div>
       <div class="form-item">
         <label for="description">Description:</label>
         <input type="text" id="description"/>
+      </div>
+      <div class="form-item">
+        <label for="dated">Date Consumed:<label>
+        <input type="date" id="dated">
+      </div>
+      <div class="form-item">
+        <label for"upload-photo">Upload a Photo:</label>
+        <input type="text" id="upload-photo">
       </div>
       <div class="form-item">
        <label for="rating" class="primary">Rating</label>
@@ -63,11 +90,68 @@
       <input type="submit" value="Save" id="save"/>
     </form>
 
+
+    <div id="edit-div">
+      <div id="edit-content">
+      <form id="edit-form">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name"/>
+      </div>
+      <div>
+        <label for="brewery">Brewery:</label>
+        <input type="text" id="brewery"/>
+      </div>
+      <div>
+        <label for="country">Country:</label>
+        <input type="text" id="country"/>
+      </div>
+      <div>
+        <label for="abv">ABV:</label>
+        <input type="number" id="abv"/>
+      </div>
+      <div class="form-item">
+        <label for="type">Type:</label>
+        <input require type="text" id="type"/>
+      </div>
+      <div class="form-item">
+        <label for="description">Description:</label>
+        <input type="text" id="description"/>
+      </div>
+      <div class="form-item">
+        <label for="dated">Date Consumed:<label>
+        <input type="date" id="dated">
+      </div>
+      <div class="form-item">
+        <label for"upload-photo">Upload a Photo:</label>
+        <input type="text" id="upload-photo">
+      </div>
+      <div class="form-item">
+       <label for="rating" class="primary">Rating</label>
+       <input type="radio" name="rating" value="5">5</input>
+       <input type="radio" name="rating" value="4">4</input>
+       <input type="radio" name="rating" value="3">3</input>
+       <input type="radio" name="rating" value="2">2</input>
+       <input type="radio" name="rating" value="1">1</input>
+     </div>
+      <input type="submit" value="Save" id="save"/>
+    </form>
+  </div>
+</div>
     <section id="stats">
     </section>
+
     <h2>Beers I done did drank:</h2>
     <section id="drank-beer-list">
     </section>
+<<<<<<< HEAD
+=======
+
+    <h2>Try A Random Beer</h2>
+    <section id="random-beer">
+    </section>
+  </body>
+>>>>>>> dev
 
 
     <div class="footer">

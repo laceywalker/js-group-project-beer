@@ -7,15 +7,16 @@ const BeerListView = function(container) {
 
 BeerListView.prototype.bindEvents = function () {
   PubSub.subscribe('Beers:data-loaded', (evt)=> {
-    console.log(evt)
     this.render(evt.detail);
   })
 };
 
 BeerListView.prototype.render = function (element) {
   this.container.innerHTML = '';
-  const beerListView = new BeerView(this.container);
-  element.forEach((beer) => beerListView.render(beer));
+  element.forEach( (beer) => {
+    const beerView = new BeerView(this.container, beer);
+    beerView.render();
+  });
 };
 
 
