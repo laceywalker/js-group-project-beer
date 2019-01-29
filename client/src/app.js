@@ -35,18 +35,22 @@ document.addEventListener('DOMContentLoaded', () => {
   beerListView.bindEvents();
 
 
-  const randomBeerContainer = document.querySelector('#random-beer');
-  const randomBeerView = new RandomBeerView(randomBeerContainer);
-  randomBeerView.bindEvents();
+ const randomBeerContainer = document.querySelector('#random-beer-container');
+ const randomBeerView = new RandomBeerView(randomBeerContainer);
+ randomBeerView.bindEvents();
 
-  const randomBeerButton = new RandomBeerButtonView(randomBeerContainer);
-  randomBeerButton.bindEvents();
+ const randomBeerButton = new RandomBeerButtonView(randomBeerContainer);
+ randomBeerButton.bindEvents();
 
   const editDiv = document.querySelector('#edit-div');
   const editForm = document.querySelector('#edit-form');
   const editFormView = new EditView(editDiv, editForm);
   editFormView.bindEvents();
 
+  // const randomBeerDiv = document.querySelector('#random-beer-container');
+  // const randomBeerContent = document.querySelector('#random-beer-content');
+  // const randomBeerPopUp = new RandomBeerView(randomBeerDiv, randomBeerContent);
+  // randomBeerPopUp.bindEvents();
 
   const url = 'http://localhost:3000/api/beers';
   const beers = new Beers(url);
