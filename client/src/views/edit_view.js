@@ -19,10 +19,17 @@ EditView.prototype.bindEvents = function () {
 };
 
 EditView.prototype.populateEditBox = function () {
-    // debugger;
+
     this.form.name.value = this.beer.name;
     this.form.brewery.value = this.beer.brewery;
+
+    const countrySelect = document.querySelector('#edit-countries')
+    countrySelect.options.forEach((option) =>{
+      
+    })
     this.form.countries.value = this.beer.country;
+
+
     this.form.abv.value = this.beer.abv;
     this.form.type.value = this.beer.type;
     this.form.description.value = this.beer.description;
@@ -37,6 +44,7 @@ EditView.prototype.handleSubmit = function (evt) {
 };
 
 EditView.prototype.createUpdatedBeer = function () {
+  debugger;
   const updatedBeer = {
     id: this.beer._id,
     name: this.form.name.value,
