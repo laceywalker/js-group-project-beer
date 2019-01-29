@@ -29,7 +29,7 @@ BeerView.prototype.render = function() {
   const beerType = this.createDetailList(`Type: ${this.beer.type}`);
   drankBeerContainer.appendChild(beerType);
 
-  const beerCountry = this.createDetailList(`Country: ${this.beer.country}`);
+  const beerCountry = this.createDetailList(`Country: ${this.beer.country}`.slice(0, -3));
   drankBeerContainer.appendChild(beerCountry);
 
   const beerDescription = this.createDetailList(`Description: ${this.beer.description}`);
