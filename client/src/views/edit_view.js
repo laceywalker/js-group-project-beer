@@ -24,10 +24,17 @@ EditView.prototype.populateEditBox = function () {
     this.form.brewery.value = this.beer.brewery;
 
     const countrySelect = document.querySelector('#edit-countries')
-    countrySelect.options.forEach((option) =>{
-      
-    })
-    this.form.countries.value = this.beer.country;
+    const countryName = this.beer.country.slice(0, -3);
+
+    const selectLength = countrySelect.options.length -1
+    for (let i = 0; i < selectLength; i++){
+      console.log(countryName)
+      if (countrySelect.options[i].textContent === countryName) {
+        countrySelect.selectedIndex = i;
+        console.log('here', i)
+      };
+    };
+
 
 
     this.form.abv.value = this.beer.abv;
@@ -44,12 +51,11 @@ EditView.prototype.handleSubmit = function (evt) {
 };
 
 EditView.prototype.createUpdatedBeer = function () {
-  debugger;
   const updatedBeer = {
     id: this.beer._id,
     name: this.form.name.value,
     brewery: this.form.brewery.value,
-    country: this.form.country.value,
+    // country: this.form.country.value,
     abv: this.form.abv.value,
     type: this.form.type.value,
     description: this.form.description.value,

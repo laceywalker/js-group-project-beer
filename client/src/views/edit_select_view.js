@@ -2,6 +2,7 @@ const PubSub = require('../helpers/pub_sub.js');
 
 const EditSelectView = function (editSelectElement) {
   this.element = editSelectElement;
+
 };
 
 EditSelectView.prototype.bindEvents = function () {
