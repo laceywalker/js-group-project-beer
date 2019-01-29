@@ -18,13 +18,10 @@ EditView.prototype.bindEvents = function () {
   })
 };
 
-
-
 EditView.prototype.populateEditBox = function () {
     // debugger;
     this.form.name.value = this.beer.name;
     this.form.brewery.value = this.beer.brewery;
-    // need to pull through the entire select with values?
     this.form.countries.value = this.beer.country;
     this.form.abv.value = this.beer.abv;
     this.form.type.value = this.beer.type;
