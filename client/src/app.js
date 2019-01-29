@@ -36,11 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const randomBeerContainer = document.querySelector('#random-beer');
-  // console.log(randomBeerContainer);
   const randomBeerView = new RandomBeerView(randomBeerContainer);
   randomBeerView.bindEvents();
 
-  // debugger
   const randomBeerButton = new RandomBeerButtonView(randomBeerContainer);
   randomBeerButton.bindEvents();
 
@@ -65,5 +63,3 @@ document.addEventListener('DOMContentLoaded', () => {
   countries.getData();
 
 });
-
-

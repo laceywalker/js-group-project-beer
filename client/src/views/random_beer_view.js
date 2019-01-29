@@ -11,13 +11,13 @@ RandomBeerView.prototype.bindEvents = function () {
     this.randomBeer = evt.detail;
 
     this.render(this.container)
-    console.log(evt.detail);
+    // console.log(evt.detail);
   })
 };
 
 RandomBeerView.prototype.render = function (container) {
 
-  const randomBeerContainer = document.createElement('div');
+  const randomBeerContainer = document.createElement('section');
   const randomBeer = this.createRandomBeer(`Try ${this.randomBeer.name} by ${this.randomBeer.brewery}. It's ${this.randomBeer.abv}% and is a ${this.randomBeer.type}.`)
   randomBeerContainer.appendChild(randomBeer)
   // console.console.dir(randomBeer);

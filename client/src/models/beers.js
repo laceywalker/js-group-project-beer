@@ -20,7 +20,6 @@ Beers.prototype.bindEvents = function () {
     this.postBeer(evt.detail);
   })
   PubSub.subscribe('RandomBeerButtonView:random-beer-clicked', () => {
-    // debugger
     const randomBeer = this.getRandomBeer();
     PubSub.publish('Beers:random-beer-generated', randomBeer);
   })
