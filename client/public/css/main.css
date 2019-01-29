@@ -1,42 +1,3 @@
-
-
-
-/* body{
-  font-family: 'Major Mono Display', monospace;
-  text-align: center;
-  padding: 20px;
-
-}
- h1 {
-  padding: inherit;
-  border: 2px solid black;
-  background-color: red;
-
-}
-
-h3{
-  padding: inherit;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  }
-
-
-
-h2 {
-  text-align: left;
-}
-
-section {
-  list-style-type: none;
-}
-
-#drank-beer-list {
- text-align: left;
- width: 250px;
- border: 2px solid black;
- display: block;
-} */
-
 body{
   font-family: 'Major Mono Display', monospace;
   text-align: center;
@@ -52,9 +13,6 @@ h1{
 }
 
 h3{
-  padding: inherit;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
   background-color: #ff9900;
 }
 
@@ -67,11 +25,27 @@ section{
 }
 
 #drank-beer-list{
- text-align: left;
- width: 250px;
- border: 2px solid black;
- display: block;
+  display: flex;
+  text-align: left;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
 
+.beer{
+  border: 2px solid black;
+  margin: 20px;
+  padding: 10px;
+  max-width: 300px;
+  min-width: 300px;
+}
+
+.beer h3 {
+margin : 0px;
+}
+
+.beer li {
+margin-top: 5px;
+margin-bottom: 5px;
 }
 
 /* navigation bar */
