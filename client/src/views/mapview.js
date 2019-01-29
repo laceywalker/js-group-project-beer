@@ -5,12 +5,13 @@ import * as PubSub from '../helpers/pub_sub.js';
 
 export function bindEventsMap(){
   PubSub.subscribe('Beers:data-loaded', event => {
-    Map(event.detail);
+    const processedArray = processBeers(event.detail); 
+    Map(processedArray);
   });
 }
 
 
-function Map (data){
+function Map (processedArray){
   // Create map instance
   var chart = am4core.create('chartdiv', am4maps.MapChart);
 
@@ -39,13 +40,7 @@ function Map (data){
   polygonSeries.exclude = ['AQ'];
 
   // Add some data
-  polygonSeries.data = [{
-    'id': 'US',
-    'fill': am4core.color('#F05C5C')
-  }, {
-    'id': 'FR',
-    'fill': am4core.color('#F05C5C')
-  }];
+  polygonSeries.data = processedArray; 
 
   // Bind 'fill' property to 'fill' key in data
   polygonTemplate.propertyFields.fill = 'fill';
@@ -56,3 +51,12 @@ function Map (data){
   chart.seriesContainer.wheelable = false;
 }
 
+function processBeers(arrayOfBeers){
+  //Extract encoded countrycode from beers
+  const codesArray = arrayOfBeers.map(beer => beer.country.substr(-2));
+
+  const processedArray = codesArray.map( code => {
+    return {'id': code, 'fill': am4core.color('#F05C5C') }
+  }); 
+  return processedArray;
+}
