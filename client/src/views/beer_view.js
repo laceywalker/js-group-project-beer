@@ -9,7 +9,7 @@ const BeerView = function(container, beer) {
 BeerView.prototype.render = function() {
 
   const drankBeerContainer = document.createElement('section');
-  drankBeerContainer.id = 'beer';
+  drankBeerContainer.className = 'beer';
 
   const beerName = this.createName(`Beer: ${this.beer.name}`);
   drankBeerContainer.appendChild(beerName);
