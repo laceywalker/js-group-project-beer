@@ -15,6 +15,7 @@ const BeerStatsView = require('./views/beer_stats_view.js');
 
 const Countries = require('./models/countries.js');
 const SelectView = require('./views/select_view.js');
+const EditSelectView = require('./views/edit_select_view.js');
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -57,6 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectElement = document.querySelector('#countries');
   const selectView = new SelectView(selectElement);
   selectView.bindEvents();
+
+  const editSelectElement = document.querySelector('#edit-countries');
+  const editSelectView = new EditSelectView(editSelectElement);
+  editSelectView.bindEvents();
 
   const countriesUrl = "https://restcountries.eu/rest/v2/all";
   const countries = new Countries(countriesUrl);
