@@ -11,7 +11,7 @@ db.beers.insertMany([
     type: "lager",
     description: "Great tidelines, foamy head, impeccable session lager",
     rating: 5,
-    date: '2011-11-11'
+    date: '2011/11/11'
   },
   {
     name: "Joker IPA",

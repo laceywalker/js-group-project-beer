@@ -36,11 +36,11 @@ BeerView.prototype.render = function() {
   drankBeerContainer.appendChild(beerDescription);
 
   const beerDate = document.createElement('li');
-  const dateToAdd = new Date(this.beer.consumed);
-  console.log(dateToAdd)
-  const dateDay = dateToAdd.getDate();
-  const dateMonth = dateToAdd.getMonth();
-  const dateYear = dateToAdd.getFullYear();
+  const dateToAdd = new Date(this.beer.date);
+  // console.log(this.beer.date)
+  // const dateDay = dateToAdd.getDate();
+  // const dateMonth = dateToAdd.getMonth();
+  // const dateYear = dateToAdd.getFullYear();
   beerDate.textContent = `Date Consumed: ${dateDay}/${dateMonth}/${dateYear}`;
   drankBeerContainer.appendChild(beerDate);
 

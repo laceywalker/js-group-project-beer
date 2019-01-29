@@ -18,6 +18,7 @@ BeerFormView.prototype.handleSubmit = function (evt) {
 };
 
 BeerFormView.prototype.createBeer = function (container) {
+  console.log(container.consumed.value)
   const newBeerInput = {
     name: container.name.value,
     brewery: container.brewery.value,
