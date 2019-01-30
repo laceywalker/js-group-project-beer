@@ -46,7 +46,7 @@ section{
   display: grid;
   min-height:100%;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 50px 150px 300px auto 0.5fr;
+  grid-template-rows: 50px 150px 250px auto 0.5fr;
   height:98vh;
 }
 
