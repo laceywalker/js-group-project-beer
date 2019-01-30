@@ -4,10 +4,13 @@ const PubSub = require('../helpers/pub_sub.js')
 const RandomBeerView = function () {
   this.buttonContainer = document.querySelector('#randomiser-container');
   this.popupContainer = document.querySelector('#randomiser-popup');
+  this.beers = null;
 };
 
 RandomBeerView.prototype.bindEvents = function () {
   PubSub.subscribe('Beers:data-loaded', (beers) => {
+    console.log(beers.detail)
+    this.beers = beers.detail;
     if (beers.detail.length === 0) {
       this.buttonContainer.innerHTML = '';
     }
@@ -24,7 +27,7 @@ RandomBeerView.prototype.bindEvents = function () {
   PubSub.subscribe('Beers:random-beer-generated', (evt) => {
       this.popupContainer.style.display = "block";
       this.randomBeer = evt.detail;
-      this.render()
+      this.render(this.randomBeer)
     })
 };
 
