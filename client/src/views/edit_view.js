@@ -19,6 +19,7 @@ EditView.prototype.bindEvents = function () {
 };
 
 EditView.prototype.populateEditBox = function () {
+  debugger;
 
     this.form.name.value = this.beer.name;
     this.form.brewery.value = this.beer.brewery;
@@ -30,12 +31,16 @@ EditView.prototype.populateEditBox = function () {
     for (let i = 0; i < selectLength; i++){
       if (countrySelect.options[i].textContent === countryName) {
         countrySelect.selectedIndex = i;
-      };
+      }
     };
     this.form.abv.value = this.beer.abv;
     this.form.type.value = this.beer.type;
     this.form.description.value = this.beer.description;
-    this.form.rating.value = this.beer.rating
+    this.form.rating.value = this.beer.rating;
+
+    const dateToChange = this.beer.date;
+    const newDate = dateToChange.split("/").join("-");
+    this.form.consumed.value = newDate;
 };
 
 EditView.prototype.handleSubmit = function (evt) {

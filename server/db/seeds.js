@@ -26,7 +26,7 @@ db.beers.insertMany([
   {
     name: "Miller Highlife",
     brewery: "Miller Brewing Co",
-    country: "USA,US",
+    country: "United States of America,US",
     abv: 4.6,
     type: "lager",
     description: "The champagne of beers",
@@ -59,7 +59,7 @@ db.beers.insertMany([
     country: "Brazil,BR",
     abv: 4.3,
     type: "lager",
-    description: "Pretty wattery, not my vibe",
+    description: "Pretty watery, not my vibe",
     rating: 2,
     date: '2019/01/01'
   },
