@@ -19,7 +19,7 @@ EditView.prototype.bindEvents = function () {
 };
 
 EditView.prototype.populateEditBox = function () {
-  debugger;
+
 
     this.form.name.value = this.beer.name;
     this.form.brewery.value = this.beer.brewery;
@@ -62,7 +62,8 @@ EditView.prototype.createUpdatedBeer = function () {
     abv: this.form.abv.value,
     type: this.form.type.value,
     description: this.form.description.value,
-    rating: this.form.rating.value
+    rating: this.form.rating.value,
+    date: this.form.consumed.value
   };
   return updatedBeer;
 };

@@ -9,7 +9,6 @@ const RandomBeerView = function () {
 
 RandomBeerView.prototype.bindEvents = function () {
   PubSub.subscribe('Beers:data-loaded', (beers) => {
-    console.log(beers.detail)
     this.beers = beers.detail;
     if (beers.detail.length === 0) {
       this.buttonContainer.innerHTML = '';
@@ -39,10 +38,7 @@ RandomBeerView.prototype.render = function () {
   closeButton.innerHTML = 'Close';
   this.popupContainer.appendChild(closeButton);
 
-  // const randomBeerContainer = document.createElement('section');
-
-  const randomBeer = this.createRandomBeer(`Try ${this.randomBeer.name} by ${this.randomBeer.brewery}. It's ${this.randomBeer.abv}% and is a ${this.randomBeer.type}.`)
-  // randomBeerContainer.appendChild(randomBeer)
+  const randomBeer = this.createRandomBeer(`Try ${this.randomBeer.name} by ${this.randomBeer.brewery}. It's ${this.randomBeer.abv}% and is a ${this.randomBeer.type}.`);
    closeButton.addEventListener('click', () => {
       this.popupContainer.style.display = 'none';
   })

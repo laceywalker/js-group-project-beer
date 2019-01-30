@@ -36,7 +36,6 @@ Beers.prototype.getData = function () {
 };
 
 Beers.prototype.postBeer = function (beerID) {
-  console.log(beerID)
   this.request.post(beerID)
     .then((beers) => {
       PubSub.publish('Beers:data-loaded', beers);
