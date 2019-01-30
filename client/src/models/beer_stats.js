@@ -23,11 +23,8 @@ BeerStats.prototype.calculateStats = function(){
   }
 
 
+  const uniqueCountries = this.countriesDrank();
   const numBeersDrank = this.beerArray.length;
-
-  const favouriteBeer = this.favouriteBeer();
-  //const worstBeer = this.worstBeer();
-  const favouriteCountry = this.favouriteCountry();
   const averageRating = this.averageRating();
   const averageABV = this.averageABV();
 
@@ -36,30 +33,16 @@ BeerStats.prototype.calculateStats = function(){
   this.beerStats =
     {
       'numBeersDrank': numBeersDrank,
-      //'worstBeer': worstBeer,
-      //'favouriteCountry': favouriteCountry,
       'averageRating': averageRating,
-      'averageABV': averageABV
+      'averageABV': averageABV,
+      'uniqueCountries': uniqueCountries
     };
 };
 
-BeerStats.prototype.favouriteBeer = function(){
-  return null;
-};
-
-//BeerStats.prototype.worstBeer = function(){
-//  let  worstBeerRating = 6;
-//  let  worstBeerIndex = null;
-//  this.beerArray.forEach((beer, index) => {
-//    if (Number(beer.rating) < worstBeerRating){
-//      worstBeerRating = Number(beer.rating);
-//      worstBeerIndex = index;
-//    }
-//  });
-//}
-
-BeerStats.prototype.favouriteCountry = function(){
-  return null;
+BeerStats.prototype.countriesDrank = function(){
+  const countryArray = this.beerArray.map( beer => beer.country);
+  const uniqueCountries = [...new Set(countryArray)];
+  return uniqueCountries;
 };
 
 BeerStats.prototype.averageRating = function(){

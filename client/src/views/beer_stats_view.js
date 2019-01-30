@@ -21,10 +21,10 @@ BeerStatsView.prototype.renderStats = function(){
     return;
   }
   const header = document.createElement('h3');
-  header.innerHTML = 'Beer Journey'
+  header.innerHTML = 'Beer Journey';
   this.container.appendChild(header);
 
-  const list = this.createStatsList()
+  const list = this.createStatsList();
   this.container.appendChild(list);
 };
 
@@ -43,6 +43,9 @@ BeerStatsView.prototype.populateList = function(list){
   const numberOfBeersLI = document.createElement('li');
   numberOfBeersLI.textContent = `You have quaffed a total of ${this.statsData.numBeersDrank} beers.`;
 
+  const uniqueCountriesLI = document.createElement('li');
+  uniqueCountriesLI.textContent = `Out of 249 countries, you have sampled a brew in ${this.statsData.uniqueCountries.length} different countries.`;
+
   const averageRatingLI = document.createElement('li');
   averageRatingLI.textContent = `On average you gave a beer a rating of ${this.statsData.averageRating} out of 5`;
 
@@ -52,6 +55,7 @@ BeerStatsView.prototype.populateList = function(list){
 
 
   list.appendChild(numberOfBeersLI);
+  list.appendChild(uniqueCountriesLI);
   list.appendChild(averageRatingLI);
   list.appendChild(averageStrengthLI);
   return list;
