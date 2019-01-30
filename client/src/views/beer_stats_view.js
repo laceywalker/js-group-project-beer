@@ -15,8 +15,8 @@ BeerStatsView.prototype.bindEvents = function(){
 };
 
 BeerStatsView.prototype.renderStats = function(){
-  const header = this.createHeader('Beer Journey');
-  this.container.appendChild(header);
+//  const header = this.createHeader('Beer Journey');
+//  this.container.appendChild(header);
   const list = this.createStatsList()
   this.container.appendChild(list);
 };
