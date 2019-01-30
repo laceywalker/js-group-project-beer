@@ -233,6 +233,11 @@ button:hover{
   margin-right: 20px;
 }
 
+#stats ul {
+margin: 0px;
+font-size: 0.8em;
+}
+
 
 .beerPic img{
   width: 40px;
