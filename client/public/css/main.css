@@ -141,6 +141,18 @@ section{
   align-items: center;
 }
 
+
+#stats {
+  display:flex;
+  flex-direction: column;
+  background-color: #ff9900;
+  text-align: left;
+  padding: 20px;
+  margin-left:20px;
+  border-radius:10px;
+  align-items: center;
+}
+
 #form input, select {
   padding:0px;
 }
@@ -231,13 +243,6 @@ button:hover{
 }
 
 
-#stats{
-  text-align: left;
-  border: 2px solid black;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  background-color: #FFF8DC;
-}
 
 #stats ul {
 margin: 0px;
@@ -301,7 +306,7 @@ font-size: 0.8em;
 
 
 #chartdiv {
-  height:30vh;
+  height:40vh;
 }
 
 
