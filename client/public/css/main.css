@@ -1,9 +1,17 @@
+html{
+  height:100%;
+  width:100%;
+}
+
+
 body{
   font-family: 'Major Mono Display', monospace;
   text-align: center;
   background-color: #FFDAB9;
   padding: 0px;
   margin: 0px;
+  height:100%;
+  width:100%;
 
 }
 
@@ -35,30 +43,33 @@ section{
 
 .grid-container {
   display: grid;
-  grid-template-columns: 5fr 1fr;
-  grid-template-rows: 3fr 6fr 5fr 1fr;
-  height: 90vh;
+  min-height:100%;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 50px 150px 300px auto 0.5fr;
+  height:98vh;
 }
 
-.Stats { grid-area: 3 / 2 / 4 / 3;
-margin-top: 20px;
+.Stats { grid-area: 4 / 2 / 5 / 3;;
+margin-top: 10px;
 }
 
-.Footer { grid-area: 4 / 1 / 5 / 3; }
+.Footer { grid-area: 5 / 1 / 6 / 3; }
 
-.beerContent { grid-area: 1 / 1 / 4 / 2;
+.beerContent { grid-area: 2 / 1 / 5 / 2;
 overflow-y:scroll;
 }
 
 
-.Form-Grid { grid-area: 2 / 2 / 3 / 3; }
+.Form-Grid { 3 / 2 / 4 / 3; }
 
-.Logo { grid-area: 1 / 2 / 2 / 3; }
+.Logo { grid-area: 2 / 2 / 3 / 3; }
 
 .Logo img {
-height:200px;
-margin:30px;
+height:100px;
+margin:10px;
 }
+
+.Header-grid { grid-area: 1 / 1 / 2 / 3; }
 
 .beer{
   border: 2px solid black;
@@ -79,13 +90,16 @@ margin-bottom: 5px;
 
 /* navigation bar */
 
+
 .navbar ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   /* background-color: #333; */
-  background-color:#ff9900;
+/*  background-color:#ff9900;*/
+ 
+  background-image: url('https://i.gifer.com/wmp.gif');
 }
 
 .navbar li{
@@ -107,13 +121,14 @@ margin-bottom: 5px;
 }
 
 #title h1 {
+  display:none;
   padding: inherit;
   border: 2px solid black;
-  background-image: url('https://i.gifer.com/wmp.gif');
-  height: 60px;
+  height: 33px;
   color: #000066;
   border-radius: 10px;
   margin: 0px;
+  background-image: url('https://i.gifer.com/wmp.gif');
 }
 
 #form {
@@ -121,6 +136,17 @@ margin-bottom: 5px;
   text-align: left;
   padding: 20px;
 }
+
+#form input, select {
+width: 50px;
+padding:0px;
+margin:2px;
+}
+
+#form radio {
+  padding: 0px;
+}
+
 
 #save {
   border: 1px solid blue;
@@ -209,7 +235,6 @@ button:hover{
 #stats{
   text-align: left;
   border: 2px solid black;
-  padding:20px;
 }
 
 /*
@@ -229,6 +254,8 @@ width: 40px;
    color: white;
    text-align: center;
 }
+
+.footer p {margin: 0px;}
 
 #edit-div {
  display: none; /* Hidden by default */
@@ -253,7 +280,7 @@ width: 40px;
 }
 
 #chartdiv {
-  height:500px;
+  height:200px;
 }
 
 #random-beer-container {
