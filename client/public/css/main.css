@@ -65,7 +65,7 @@ overflow-y:scroll;
 .Logo { grid-area: 2 / 2 / 3 / 3; }
 
 .Logo img {
-height:100px;
+height:130px;
 margin:10px;
 }
 
@@ -138,7 +138,6 @@ margin-bottom: 5px;
 }
 
 #form input, select {
-width: 50px;
 padding:0px;
 margin:2px;
 }
