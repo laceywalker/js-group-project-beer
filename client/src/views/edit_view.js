@@ -37,7 +37,11 @@ EditView.prototype.populateEditBox = function () {
     this.form.type.value = this.beer.type;
     this.form.description.value = this.beer.description;
     this.form.rating.value = this.beer.rating;
-    this.form.consumed.value = this.beer.date;
+
+    const dateToChange = this.beer.date;
+    const newDate = dateToChange.split("/").join("-");
+    console.log(newDate)
+    this.form.consumed.value = newDate
 };
 
 EditView.prototype.handleSubmit = function (evt) {
