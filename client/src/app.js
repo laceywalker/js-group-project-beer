@@ -16,6 +16,8 @@ const Countries = require('./models/countries.js');
 const SelectView = require('./views/select_view.js');
 const EditSelectView = require('./views/edit_select_view.js');
 
+const DateView = require('./views/date_view.js');
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -44,10 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const editFormView = new EditView(editDiv, editForm);
   editFormView.bindEvents();
 
-  // const randomBeerDiv = document.querySelector('#random-beer-container');
-  // const randomBeerContent = document.querySelector('#random-beer-content');
-  // const randomBeerPopUp = new RandomBeerView(randomBeerDiv, randomBeerContent);
-  // randomBeerPopUp.bindEvents();
+  const dateDiv = document.querySelector('#consumed');
+  const dateView = new DateView(dateDiv);
+  dateView.setTodayDate();
 
   const url = 'http://localhost:3000/api/beers';
   const beers = new Beers(url);
