@@ -20,6 +20,10 @@ BeerStatsView.prototype.renderStats = function(){
   if (this.statsData === null) {
     return;
   }
+  const header = document.createElement('h3');
+  header.innerHTML = 'Beer Journey'
+  this.container.appendChild(header);
+
   const list = this.createStatsList()
   this.container.appendChild(list);
 };

@@ -153,6 +153,11 @@ section{
   align-items: center;
 }
 
+#stats h3 {
+margin: 0px;
+margin-bottom: 10px;
+}
+
 #form input, select {
   padding:0px;
 }
@@ -326,7 +331,7 @@ font-size: 0.8em;
 
 
 #randomiser-container {
-  margin: 15% auto;
+  margin: auto;
   padding: 20px;
   width: 30%;
 }
