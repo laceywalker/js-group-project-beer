@@ -309,8 +309,7 @@ font-size: 0.8em;
 }
 
 
-
-#random-beer-container {
+#randomiser-popup {
   display: none;
   position: fixed;
   z-index: 1;
@@ -322,15 +321,10 @@ font-size: 0.8em;
   background-color: rgba(0,0,0,0.4);
 }
 
-#random-main-container h2 {
-  display: inline;
-}
 
-
-#random-beer-container {
-  background-color: #FFF8DC;
+#randomiser-container {
+  /* background-color: #FFF8DC; */
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
   width: 30%;
 }
