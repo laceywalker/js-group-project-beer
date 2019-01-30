@@ -16,6 +16,12 @@ BeerStats.prototype.bindEvents = function(){
 BeerStats.prototype.calculateStats = function(){
 
   // Various function calls to calculate the individual stats go here
+   
+  if (this.beerArray.length === 0){
+  this.beerStats = null;  
+    return;
+  }
+
 
   const numBeersDrank = this.beerArray.length;
 
