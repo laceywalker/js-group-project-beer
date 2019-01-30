@@ -1,5 +1,5 @@
 const PubSub = require('../helpers/pub_sub.js')
-// const RandomBeerGenerator = require('../models/random_beer_generator.js')
+
 
 const RandomBeerView = function (container, element) {
   this.container = container;
