@@ -276,11 +276,12 @@ width: 40px;
 
 #edit-form {
     position: relative;
-    background-color: #fefefe;
+    background-color: #FFF8DC;
+    /* opacity: 0.9; */
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 45%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
