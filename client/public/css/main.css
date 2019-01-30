@@ -45,7 +45,7 @@ section{
 .grid-container {
   display: grid;
   min-height:100%;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 400px 3fr;
   grid-template-rows: 50px 250px 1fr 1fr;
   height:98vh;
 }
@@ -140,6 +140,11 @@ section{
 #form input, select {
   padding:0px;
   margin:2px;
+}
+
+.fixedwidth {
+width: 100px;
+
 }
 
 #form radio {
