@@ -7,7 +7,6 @@ const BeerStats = require('./models/beer_stats.js');
 const BeerListView = require('./views/beer_list_view.js');
 const BeerFormView = require('./views/beer_form_view.js');
 
-const RandomBeerButtonView = require('./views/random_beer_button_view.js');
 const RandomBeerView = require('./views/random_beer_view.js');
 
 const EditView = require('./views/edit_view.js');
@@ -36,12 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
   beerListView.bindEvents();
 
 
- const randomBeerContainer = document.querySelector('#random-beer-container');
- const randomBeerView = new RandomBeerView(randomBeerContainer);
- randomBeerView.bindEvents();
+  const randomBeerView = new RandomBeerView();
+  randomBeerView.bindEvents();
 
- const randomBeerButton = new RandomBeerButtonView(randomBeerContainer);
- randomBeerButton.bindEvents();
 
   const editDiv = document.querySelector('#edit-div');
   const editForm = document.querySelector('#edit-form');
