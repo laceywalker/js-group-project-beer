@@ -2,120 +2,120 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <title>Sláinte</title>
-    <script src="/js/bundle.js"></script>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="/assets/logo_notext_trans.png" />
+  <meta charset="utf-8">
+  <title>Sláinte</title>
+  <script src="/js/bundle.js"></script>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="/assets/logo_notext_trans.png" />
 </head>
 
 <body>
 
-    <!--The Master Flex Container -->
+  <!--The Master Flex Container -->
 
 
-    <div class="grid-container">
-        <div class="Header-grid">
+  <div class="grid-container">
+    <div class="Header-grid">
 
-    <nav class='navbar'>
+      <nav class='navbar'>
         <ul>
-            <li><a href="default.html">Home</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html">About</a></li>
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-instagram"></a>
+          <li><a href="default.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-instagram"></a>
         </ul>
-    </nav>
+      </nav>
 
-        </div>
-        <div class="beerContent">
-            <section id='chartdiv'></section>
-            <section id="drank-beer-list"></section>
-<p>Copyright &copy; CodeClan-e27-Sláinte - Please drink responsibly  </p>
-        </div>
-        <div class='Form-grid'>
-            <form id="form">
-              <table>
-<tbody>
-<tr>
-<td><label for="name">Name:</label></td>
-<td><label for="brewery">Brewery:</label></td>
-</tr>
-<tr>
-<td><input class='fixedwidth' required type="text" id="name" /></td>
-<td><input class='fixedwidth' type="text" id="brewery" /></td>
-</tr>
-<tr>
-<td><label for="countries">Select a country:</label></td>
-<td><label for="abv">ABV:</label></td>
-</tr>
-<tr>
-<td>
-  <select class='fixedwidth' id="countries">
-    <option selected disabled></option>
-</select>
-</td>
-<td><input class='fixedwidth' required type="number" id="abv" step="0.1" min="0" max="100" /></td>
-</tr>
-<tr>
-<td><label for="type">Type:</label></td>
-<td><label for="description">Description:</label></td>
-</tr>
-<tr>
-<td><input class='fixedwidth' require type="text" id="type" /></td>
-<td><input class='fixedwidth' type="text" id="description" /></td>
-</tr>
-<tr>
-<td><label for="consumed">Date Consumed:</label></td>
-<td><label for="rating" class="primary">Rating</label></td>
-</tr>
-<tr>
-<td><input class='fixedwidth' type="date" id="consumed"></td>
-<td>        <input required type="radio" name="rating" value="5">5</input>
-        <input type="radio" name="rating" value="4">4</input>
-        <input type="radio" name="rating" value="3">3</input>
-        <input type="radio" name="rating" value="2">2</input>
-        <input type="radio" name="rating" value="1">1</input></td>
-</tr>
-</tbody>
-</table>
-                <input type="submit" value="Save" id="save" />
-            </form>
-
-        </div>
-        <div class="Logo">
-            <img src='./assets/logo_text_trans.png'>
-        </div>
-        <div class="Map">
-        </div>
-        <div class="Stats">
-            <section id="stats"></section>
-            <section id="random-main-container">
-                <h2>Try A Random Beer</h2>
-                <button id="touch-me" name="touch-me">Random Beer!</button>
-                <div id="random-beer-container">
-                </div>
-            </section>
-        </div>
-        <div class="Footer">
-
-
-        </div>
     </div>
+    <div class="beerContent">
+      <section id='chartdiv'></section>
+      <section id="drank-beer-list"></section>
+      <p>Copyright &copy; CodeClan-e27-Sláinte - Please drink responsibly </p>
+    </div>
+    <div class='Form-grid'>
+      <form id="form">
+        <table>
+          <tbody>
+            <tr>
+              <td><label for="name">Name:</label></td>
+              <td><label for="brewery">Brewery:</label></td>
+            </tr>
+            <tr>
+              <td><input class='fixedwidth' required type="text" id="name" /></td>
+              <td><input class='fixedwidth' type="text" id="brewery" /></td>
+            </tr>
+            <tr>
+              <td><label for="countries">Select a country:</label></td>
+              <td><label for="abv">ABV:</label></td>
+            </tr>
+            <tr>
+              <td>
+                <select class='fixedwidth' id="countries">
+                  <option selected disabled></option>
+                </select>
+              </td>
+              <td><input class='fixedwidth' required type="number" id="abv" step="0.1" min="0" max="100" /></td>
+            </tr>
+            <tr>
+              <td><label for="type">Type:</label></td>
+              <td><label for="description">Description:</label></td>
+            </tr>
+            <tr>
+              <td><input class='fixedwidth' require type="text" id="type" /></td>
+              <td><input class='fixedwidth' type="text" id="description" /></td>
+            </tr>
+            <tr>
+              <td><label for="consumed">Date Consumed:</label></td>
+              <td><label for="rating" class="primary">Rating</label></td>
+            </tr>
+            <tr>
+              <td><input class='fixedwidth' type="date" id="consumed"></td>
+              <td> <input required type="radio" name="rating" value="5">5</input>
+                <input type="radio" name="rating" value="4">4</input>
+                <input type="radio" name="rating" value="3">3</input>
+                <input type="radio" name="rating" value="2">2</input>
+                <input type="radio" name="rating" value="1">1</input></td>
+            </tr>
+          </tbody>
+        </table>
+        <input type="submit" value="Save" id="save" />
+      </form>
 
-    <div id="edit-div">
+    </div>
+    <div class="Logo">
+      <img src='./assets/logo_text_trans.png'>
+    </div>
+    <div class="Map">
+    </div>
+    <div class="Stats">
+      <section id="stats"></section>
+      <section id="random-main-container">
+        <h2>Try A Random Beer</h2>
+        <button id="touch-me" name="touch-me">Random Beer!</button>
+        <div id="random-beer-container">
+        </div>
+      </section>
+    </div>
+    <div class="Footer">
 
-      <form id="edit-form">
+
+    </div>
+  </div>
+
+  <div id="edit-div">
+
+    <form id="edit-form">
       <div>
         <label for="name">Name:</label>
-        <input type="text" id="name"/>
+        <input type="text" id="name" />
       </div>
       <div>
         <label for="brewery">Brewery:</label>
-        <input type="text" id="brewery"/>
+        <input type="text" id="brewery" />
       </div>
       <div>
         <label for="edit">Select a country:</label>
@@ -125,34 +125,34 @@
       </div>
       <div>
         <label for="abv">ABV:</label>
-        <input type="number" id="abv" step="0.1" min="0" max="100"/>
+        <input type="number" id="abv" step="0.1" min="0" max="100" />
       </div>
       <div class="form-item">
         <label for="type">Type:</label>
-        <input require type="text" id="type"/>
+        <input require type="text" id="type" />
       </div>
       <div class="form-item">
         <label for="description">Description:</label>
-        <input type="text" id="description"/>
+        <input type="text" id="description" />
       </div>
       <div class="form-item">
         <label for="consumed">Date Consumed:<label>
-        <input type="date" id="consumed">
+            <input type="date" id="consumed">
       </div>
       <div class="form-item">
-       <label for="rating" class="primary">Rating</label>
-       <input type="radio" name="rating" value="5">5</input>
-       <input type="radio" name="rating" value="4">4</input>
-       <input type="radio" name="rating" value="3">3</input>
-       <input type="radio" name="rating" value="2">2</input>
-       <input type="radio" name="rating" value="1">1</input>
-     </div>
-        <input type="submit" value="Save" id="save"/>
+        <label for="rating" class="primary">Rating</label>
+        <input type="radio" name="rating" value="5">5</input>
+        <input type="radio" name="rating" value="4">4</input>
+        <input type="radio" name="rating" value="3">3</input>
+        <input type="radio" name="rating" value="2">2</input>
+        <input type="radio" name="rating" value="1">1</input>
+      </div>
+      <input type="submit" value="Save" id="save" />
     </form>
 
 
-    </div>
-    </section>
+  </div>
+  </section>
 
 
 </body>
