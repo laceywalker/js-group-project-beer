@@ -19,13 +19,28 @@ EditView.prototype.bindEvents = function () {
 };
 
 EditView.prototype.populateEditBox = function () {
+  debugger;
+
     this.form.name.value = this.beer.name;
     this.form.brewery.value = this.beer.brewery;
-    this.form.country.value = this.beer.country;
+
+    const countrySelect = document.querySelector('#edit-countries')
+    const countryName = this.beer.country.slice(0, -3);
+
+    const selectLength = countrySelect.options.length -1
+    for (let i = 0; i < selectLength; i++){
+      if (countrySelect.options[i].textContent === countryName) {
+        countrySelect.selectedIndex = i;
+      }
+    };
     this.form.abv.value = this.beer.abv;
     this.form.type.value = this.beer.type;
     this.form.description.value = this.beer.description;
-    this.form.rating.value = this.beer.rating
+    this.form.rating.value = this.beer.rating;
+
+    const dateToChange = this.beer.date;
+    const newDate = dateToChange.split("/").join("-");
+    this.form.consumed.value = newDate;
 };
 
 EditView.prototype.handleSubmit = function (evt) {
@@ -36,11 +51,14 @@ EditView.prototype.handleSubmit = function (evt) {
 };
 
 EditView.prototype.createUpdatedBeer = function () {
+  const select = this.form['edit-countries']
+  const value = select.options[select.selectedIndex].value;
+
   const updatedBeer = {
     id: this.beer._id,
     name: this.form.name.value,
     brewery: this.form.brewery.value,
-    country: this.form.country.value,
+    country: value,
     abv: this.form.abv.value,
     type: this.form.type.value,
     description: this.form.description.value,

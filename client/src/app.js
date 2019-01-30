@@ -7,7 +7,6 @@ const BeerStats = require('./models/beer_stats.js');
 const BeerListView = require('./views/beer_list_view.js');
 const BeerFormView = require('./views/beer_form_view.js');
 
-const RandomBeerButtonView = require('./views/random_beer_button_view.js');
 const RandomBeerView = require('./views/random_beer_view.js');
 
 const EditView = require('./views/edit_view.js');
@@ -15,6 +14,7 @@ const BeerStatsView = require('./views/beer_stats_view.js');
 
 const Countries = require('./models/countries.js');
 const SelectView = require('./views/select_view.js');
+const EditSelectView = require('./views/edit_select_view.js');
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,18 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
   beerListView.bindEvents();
 
 
-  const randomBeerContainer = document.querySelector('#random-beer');
-  const randomBeerView = new RandomBeerView(randomBeerContainer);
+  const randomBeerView = new RandomBeerView();
   randomBeerView.bindEvents();
 
-  const randomBeerButton = new RandomBeerButtonView(randomBeerContainer);
-  randomBeerButton.bindEvents();
 
   const editDiv = document.querySelector('#edit-div');
   const editForm = document.querySelector('#edit-form');
   const editFormView = new EditView(editDiv, editForm);
   editFormView.bindEvents();
 
+  // const randomBeerDiv = document.querySelector('#random-beer-container');
+  // const randomBeerContent = document.querySelector('#random-beer-content');
+  // const randomBeerPopUp = new RandomBeerView(randomBeerDiv, randomBeerContent);
+  // randomBeerPopUp.bindEvents();
 
   const url = 'http://localhost:3000/api/beers';
   const beers = new Beers(url);
@@ -57,6 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectElement = document.querySelector('#countries');
   const selectView = new SelectView(selectElement);
   selectView.bindEvents();
+
+  const editSelectElement = document.querySelector('#edit-countries');
+  const editSelectView = new EditSelectView(editSelectElement);
+  editSelectView.bindEvents();
 
   const countriesUrl = "https://restcountries.eu/rest/v2/all";
   const countries = new Countries(countriesUrl);

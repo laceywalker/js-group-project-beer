@@ -19,8 +19,8 @@ Beers.prototype.bindEvents = function () {
   PubSub.subscribe('BeerFormView:New Beer Submit', (evt) => {
     this.postBeer(evt.detail);
   })
-  PubSub.subscribe('RandomBeerButtonView:random-beer-clicked', () => {
-    const randomBeer = this.getRandomBeer();
+  PubSub.subscribe('RandomBeerButtonView:random-beer-clicked', (evt) => {
+    const randomBeer = this.getRandomBeer(evt.detail);
     PubSub.publish('Beers:random-beer-generated', randomBeer);
   })
 };
@@ -52,8 +52,8 @@ Beers.prototype.deleteBeer = function (beerId) {
     .catch(console.error);
 };
 
-Beers.prototype.getRandomBeer = function(){
-  const randomBeer = this.beers[Math.floor(Math.random() * this.beers.length)];
+Beers.prototype.getRandomBeer = function(currentBeers){
+  const randomBeer = currentBeers[Math.floor(Math.random() * this.beers.length)];
   return randomBeer
 }
 

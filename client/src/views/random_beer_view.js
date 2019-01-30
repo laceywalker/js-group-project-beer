@@ -1,33 +1,58 @@
 const PubSub = require('../helpers/pub_sub.js')
-// const RandomBeerGenerator = require('../models/random_beer_generator.js')
 
-const RandomBeerView = function (container, element) {
-  this.container = container;
-  this.element = element;
-}
 
-RandomBeerView.prototype.bindEvents = function () {
-  PubSub.subscribe('Beers:random-beer-generated', (evt) => {
-    this.randomBeer = evt.detail;
-
-    this.render(this.container)
-    // console.log(evt.detail);
-  })
+const RandomBeerView = function () {
+  this.buttonContainer = document.querySelector('#randomiser-container');
+  this.popupContainer = document.querySelector('#randomiser-popup');
+  this.beers = null;
 };
 
-RandomBeerView.prototype.render = function (container) {
+RandomBeerView.prototype.bindEvents = function () {
+  PubSub.subscribe('Beers:data-loaded', (beers) => {
+    console.log(beers.detail)
+    this.beers = beers.detail;
+    if (beers.detail.length === 0) {
+      this.buttonContainer.innerHTML = '';
+    }
+    else {
+      this.buttonContainer.innerHTML = '';
+      const beerButton = document.createElement('button');
+      beerButton.textContent = 'Random Beer';
+      this.buttonContainer.appendChild(beerButton);
+      this.buttonContainer.addEventListener('click', (evt) => {
+      PubSub.publish('RandomBeerButtonView:random-beer-clicked', beers.detail)
+    });
+    }
+  })
+  PubSub.subscribe('Beers:random-beer-generated', (evt) => {
+      this.popupContainer.style.display = "block";
+      this.randomBeer = evt.detail;
+      this.render(this.randomBeer)
+    })
+};
 
-  const randomBeerContainer = document.createElement('section');
+
+RandomBeerView.prototype.render = function () {
+  this.popupContainer.innerHTML = '';
+
+  const closeButton = document.createElement('button');
+  closeButton.innerHTML = 'Close';
+  this.popupContainer.appendChild(closeButton);
+
+  // const randomBeerContainer = document.createElement('section');
+
   const randomBeer = this.createRandomBeer(`Try ${this.randomBeer.name} by ${this.randomBeer.brewery}. It's ${this.randomBeer.abv}% and is a ${this.randomBeer.type}.`)
-  randomBeerContainer.appendChild(randomBeer)
-  // console.console.dir(randomBeer);
+  // randomBeerContainer.appendChild(randomBeer)
+   closeButton.addEventListener('click', () => {
+      this.popupContainer.style.display = 'none';
+  })
 
-  this.container.appendChild(randomBeerContainer);
+  this.popupContainer.appendChild(randomBeer);
 };
 
 
 RandomBeerView.prototype.createRandomBeer= function (text) {
-  const detail = document.createElement('li');
+  const detail = document.createElement('p');
   detail.textContent = text;
   return detail;
 };
