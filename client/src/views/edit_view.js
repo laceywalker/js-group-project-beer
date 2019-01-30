@@ -40,8 +40,7 @@ EditView.prototype.populateEditBox = function () {
 
     const dateToChange = this.beer.date;
     const newDate = dateToChange.split("/").join("-");
-    console.log(newDate)
-    this.form.consumed.value = newDate
+    this.form.consumed.value = newDate;
 };
 
 EditView.prototype.handleSubmit = function (evt) {
