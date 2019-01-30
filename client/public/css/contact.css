@@ -345,7 +345,7 @@ font-size: 0.8em;
 } */
 
 /* Style inputs */
-column input[type=text], select, textarea {
+input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -354,7 +354,7 @@ column input[type=text], select, textarea {
   resize: vertical;
 }
 
-column input[type=submit] {
+input[type=submit] {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -362,7 +362,7 @@ column input[type=submit] {
   cursor: pointer;
 }
 
-column input[type=submit]:hover {
+input[type=submit]:hover {
   background-color: #45a049;
 }
 
